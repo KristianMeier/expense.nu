@@ -71,6 +71,7 @@ export const LOREM =
 
 export const users = {
   benny: { name: 'benny', password: 'benny' },
+  demo: { name: 'demo', password: 'demo' },
   johnny: { name: 'johnny', password: 'johnny' },
   lenny: { name: 'lenny', password: 'lenny' },
   kenny: { name: 'kenny', password: 'kenny' },

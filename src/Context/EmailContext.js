@@ -1,7 +1,5 @@
 import { createContext, useContext, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import emailjs from 'emailjs-com'
-import { NAVIGATION } from '../Constants/constants'
 
 const EmailContext = createContext()
 
