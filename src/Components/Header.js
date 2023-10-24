@@ -1,12 +1,11 @@
 import { Typography } from '@mui/material'
 
-export const Header = ({ content }) => (
+export const Header = ({ content, variant }) => (
   <Typography
-    variant="h4"
+    variant={variant ? variant : 'h4'}
     align="center"
     gutterBottom
     sx={{
-      paddingTop: '15px',
       paddingBottom: '15px',
     }}>
     {content}

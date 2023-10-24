@@ -1,9 +1,9 @@
-import { Button, TextField, Typography, Grid } from '@mui/material'
+import { Button, TextField, Typography, Grid, Box } from '@mui/material'
 import emailjs from 'emailjs-com'
 
 import { useNavigate } from 'react-router-dom'
 import { useEmailContext } from '../../Context/EmailContext'
-import { LOREM, NAVIGATION } from '../../Constants/constants'
+import { NAVIGATION, TEXT_FORSIDE } from '../../Constants/constants'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 
@@ -24,7 +24,21 @@ export const ForsideLeft = () => {
         <Grid
           item
           xs={12}>
-          <Typography variant="body2">{LOREM}</Typography>
+          <Typography variant="body2">{TEXT_FORSIDE}</Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}>
+          <Box
+            component="img"
+            src="images/integrations.png"
+            alt="Descriptive text"
+            sx={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
         </Grid>
         <Grid
           item
@@ -37,11 +51,6 @@ export const ForsideLeft = () => {
             style={{ height: '56px' }}>
             Log Ind
           </Button>
-        </Grid>
-        <Grid
-          item
-          xs={12}>
-          <Typography variant="body2">{LOREM}</Typography>
         </Grid>
         <Grid
           item

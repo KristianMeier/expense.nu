@@ -7,6 +7,7 @@ import Alert from '@mui/material/Alert'
 import { useNavigate } from 'react-router-dom'
 import { NAVIGATION, users } from '../Constants/constants'
 import { Header } from '../Components/Header'
+import { Typography } from '@mui/material'
 
 export const LogindPage = () => {
   const [username, setUsername] = useState('')
@@ -35,6 +36,9 @@ export const LogindPage = () => {
           alignItems: 'center',
         }}>
         <Header content="Log Ind" />
+        <Typography color={'red'}>
+          Use EMPTY username and password to login as demo user
+        </Typography>
         <Box
           component="form"
           noValidate

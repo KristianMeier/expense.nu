@@ -8,7 +8,7 @@ export const ForsideRight = () => (
     item
     xs={12}
     md={6}
-    style={{ height: '100%', padding: '20px' }}>
+    sx={{ height: '100%', p: 2 }}>
     <Box
       sx={{
         width: '100%',

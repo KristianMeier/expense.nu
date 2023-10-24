@@ -66,6 +66,9 @@ export const INFO_REGISTRERING = {
 export const LOREM =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl Lorem ipsum dolor sit amet'
 
+export const TEXT_FORSIDE =
+  'Du can med appen integrere til E-conomic, Billy og Dinero. Udlæggeren kan med mobilen indsende udlæg, som havner direkte i Kassekladen'
+
 export const users = {
   benny: { name: 'benny', password: 'benny' },
   demo: { name: 'demo', password: 'demo' },
