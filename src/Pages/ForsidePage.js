@@ -6,6 +6,7 @@ import { ForsideDialog } from '../Components/ForsideComponents/ForsideDialog'
 import { ForsideLeft } from '../Components/ForsideComponents/ForsideLeft'
 import { ForsideLeftTwo } from '../Components/ForsideComponents/ForsideLeftTwo'
 import { ForsideRightTwo } from '../Components/ForsideComponents/ForsideRightTwo'
+import { TEXT } from '../Constants/constants'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 
@@ -13,10 +14,10 @@ export const ForsidePage = () => (
   <Container
     maxWidth="lg"
     style={{ marginTop: '50px' }}>
-    <Header content="Expenses.nu" />
+    <Header content={TEXT.frontpage_title} />
     <Header
       variant="h5"
-      content="Udlægshåndtering gjort simpelt"
+      content={TEXT.frontpage_subtitle}
     />
     <Grid
       container

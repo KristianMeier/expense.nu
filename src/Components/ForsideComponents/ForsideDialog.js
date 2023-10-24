@@ -8,6 +8,7 @@ import {
 } from '@mui/material'
 import emailjs from 'emailjs-com'
 import { useEmailContext } from '../../Context/EmailContext'
+import { TEXT } from '../../Constants/constants'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 
@@ -28,7 +29,7 @@ export const ForsideDialog = () => {
           onClick={handleCloseDialog}
           color="primary"
           autoFocus>
-          Ok
+          {TEXT.button_ok}
         </Button>
       </DialogActions>
     </Dialog>

@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
-import { LOREM } from '../../Constants/constants'
+import { TEXT } from '../../Constants/constants'
 
 export const ForsideRightTwo = () => (
   <Grid
@@ -19,7 +19,7 @@ export const ForsideRightTwo = () => (
         sx={{
           padding: '10px',
         }}>
-        {LOREM}
+        {TEXT.lorem}
       </Typography>
       <Box
         component="img"

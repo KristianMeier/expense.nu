@@ -3,6 +3,7 @@ import { CloudUpload } from '@mui/icons-material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { green } from '@mui/material/colors'
 import { useAppContext } from '../Context/AppContext'
+import { TEXT } from '../Constants/constants'
 
 export const UploadButton = () => {
   const { receipt, handleReciptUpload } = useAppContext()
@@ -20,7 +21,9 @@ export const UploadButton = () => {
       ) : (
         <CloudUpload style={{ marginRight: '10px' }} />
       )}
-      {receipt ? 'Bilag uploadet' : 'Upload ét bilag'}
+      {receipt
+        ? TEXT.registrer_button_uploaded
+        : TEXT.registrer_button_not_uploaded}
       <input
         type="file"
         hidden

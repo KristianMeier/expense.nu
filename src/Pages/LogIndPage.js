@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import Alert from '@mui/material/Alert'
 import { useNavigate } from 'react-router-dom'
-import { NAVIGATION, users } from '../Constants/constants'
+import { NAVIGATION, TEXT, USERS } from '../Constants/constants'
 import { Header } from '../Components/Header'
 import { Typography } from '@mui/material'
 
@@ -16,11 +16,11 @@ export const LogindPage = () => {
   const navigate = useNavigate()
 
   const handleLogin = () => {
-    const user = users[username]
+    const user = USERS[username]
     if (user && user.password === password) {
       navigate(NAVIGATION.registrer.path)
     } else {
-      setError('Invalid username or password')
+      setError(TEXT.error)
     }
   }
 
@@ -35,10 +35,8 @@ export const LogindPage = () => {
           flexDirection: 'column',
           alignItems: 'center',
         }}>
-        <Header content="Log Ind" />
-        <Typography color={'red'}>
-          Use EMPTY username and password to login as demo user
-        </Typography>
+        <Header content={TEXT.login_page_header} />
+        <Typography color={'red'}>{TEXT.login_page_hint}</Typography>
         <Box
           component="form"
           noValidate
@@ -47,7 +45,7 @@ export const LogindPage = () => {
             margin="normal"
             required
             fullWidth
-            label="Brugernavn"
+            label={TEXT.login_page_username}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -55,7 +53,7 @@ export const LogindPage = () => {
             margin="normal"
             required
             fullWidth
-            label="Password"
+            label={TEXT.login_page_password}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -66,7 +64,7 @@ export const LogindPage = () => {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
             onClick={handleLogin}>
-            Log Ind
+            {TEXT.login_page_button}
           </Button>
           {error && (
             <Alert

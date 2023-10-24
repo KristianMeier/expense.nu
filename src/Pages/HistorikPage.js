@@ -12,8 +12,8 @@ import {
   Box,
 } from '@mui/material'
 import { Header } from '../Components/Header'
-import { RECEIPT_HEADERS } from '../Constants/constants'
 import { AccountMenu } from '../Components/AccountMenu'
+import { TEXT } from '../Constants/constants'
 
 export const HistorikPage = () => {
   const [receipts, setReceipts] = useState([])
@@ -30,7 +30,7 @@ export const HistorikPage = () => {
       maxWidth="sm"
       sx={{ position: 'relative' }}>
       <AccountMenu />
-      <Header content="Registreringshistorik" />
+      <Header content={TEXT.historik_page_header} />
       <Grid
         item
         xs={12}>
@@ -38,7 +38,7 @@ export const HistorikPage = () => {
           <Table>
             <TableHead>
               <TableRow>
-                {RECEIPT_HEADERS.map((header) => (
+                {TEXT.receipt_headers.map((header) => (
                   <TableCell key={header}>{header}</TableCell>
                 ))}
               </TableRow>

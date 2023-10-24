@@ -3,7 +3,7 @@ import emailjs from 'emailjs-com'
 
 import { useNavigate } from 'react-router-dom'
 import { useEmailContext } from '../../Context/EmailContext'
-import { NAVIGATION, TEXT_FORSIDE } from '../../Constants/constants'
+import { NAVIGATION, TEXT } from '../../Constants/constants'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 
@@ -24,7 +24,7 @@ export const ForsideLeft = () => {
         <Grid
           item
           xs={12}>
-          <Typography variant="body2">{TEXT_FORSIDE}</Typography>
+          <Typography variant="body2">{TEXT.long_text}</Typography>
         </Grid>
         <Grid
           item
@@ -49,7 +49,7 @@ export const ForsideLeft = () => {
             fullWidth
             onClick={() => navigate(NAVIGATION.logInd.path)}
             style={{ height: '56px' }}>
-            Log Ind
+            {TEXT.login}
           </Button>
         </Grid>
         <Grid
@@ -73,7 +73,7 @@ export const ForsideLeft = () => {
             fullWidth
             onClick={handleRequestDemo}
             style={{ height: '56px' }}>
-            Anmod om Demo
+            {TEXT.request_demo}
           </Button>
         </Grid>
       </Grid>
