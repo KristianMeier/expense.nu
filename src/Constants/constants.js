@@ -4,13 +4,13 @@ export const USERS = {
 }
 
 export const NAVIGATION = {
-  registrer: '/demo',
+  registrer: '/demo-receipt',
   logInd: '/login',
   forsiden: '/',
   test: '/test',
   sigUp: '/signup',
-  driving: '/driving',
-  volunteer: '/volunteer',
+  driving: '/demo-driving',
+  create_user: '/demo-create-user',
 }
 
 export const DEMO_NAVIGATION = {

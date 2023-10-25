@@ -5,7 +5,6 @@ import {
   Grid,
   IconButton,
   Tooltip,
-  MenuItem,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -13,13 +12,13 @@ import {
   DialogActions,
 } from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info'
-import { UploadButton } from '../Components/UploadButton'
 import { useState } from 'react'
 import { useLanguageContext } from '../Context/LanguageContext'
 import { Title } from '../Components/Title'
 
 export const DrivingPage = () => {
   const [infoDrivingDialogOpen, setDrivingInfoDialogOpen] = useState(false)
+  const [isDrivingModalOpen, setIsDrivingModalOpen] = useState(false)
   const { TEXT } = useLanguageContext()
 
   const handleDrivingInfoDialogOpen = () => {
@@ -30,12 +29,21 @@ export const DrivingPage = () => {
     setDrivingInfoDialogOpen(false)
   }
 
+  const handleDrivingModalClose = () => {
+    setIsDrivingModalOpen(false)
+  }
+
+  const handleDrivingSubmit = (e) => {
+    e.preventDefault()
+    setIsDrivingModalOpen(true)
+  }
+
   return (
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
-      <Title>{TEXT.driving}</Title>
-      <form onSubmit={() => console.log('hej')}>
+      <Title>{TEXT.driving_title}</Title>
+      <form onSubmit={handleDrivingSubmit}>
         <Grid
           container
           spacing={3}>
@@ -44,8 +52,9 @@ export const DrivingPage = () => {
             xs={12}>
             <TextField
               fullWidth
-              label="hej"
-              value="hej"
+              required
+              label={TEXT.driving_date}
+              value="2021-01-01"
               type="date"
               onChange={() => console.log('hej')}
               InputLabelProps={{
@@ -60,8 +69,8 @@ export const DrivingPage = () => {
               fullWidth
               required
               type="number"
-              label="hej"
-              value={3}
+              label={TEXT.driving_kilometers}
+              value={12345}
               onChange={() => console.log('hej')}
             />
           </Grid>
@@ -69,29 +78,35 @@ export const DrivingPage = () => {
             item
             xs={12}>
             <TextField
-              select
               fullWidth
-              label="hej"
-              value="hej"
-              onChange={() => console.log('hej')}>
-              <MenuItem>Hej</MenuItem>
-            </TextField>
+              required
+              label={TEXT.driving_from}
+              value="Testvej 123, 1234 Testby, Danmark"
+              onChange={() => console.log('hej')}></TextField>
           </Grid>
           <Grid
             item
             xs={12}>
             <TextField
               fullWidth
-              label="hej"
-              value="hej"
+              required
+              label={TEXT.driving_to}
+              value="Testvej 456, 5678 Testby, Danmark"
               onChange={() => console.log('hej')}
             />
           </Grid>
           <Grid
             item
             xs={12}>
-            <UploadButton />
+            <TextField
+              fullWidth
+              required
+              label={TEXT.driving_purpose}
+              value={TEXT.driving_getting_temp}
+              onChange={() => console.log('hej')}
+            />
           </Grid>
+
           <Grid
             item
             xs={12}
@@ -101,7 +116,7 @@ export const DrivingPage = () => {
               variant="contained"
               color="primary"
               type="submit">
-              Hej
+              {TEXT.driving_submit}
             </Button>
             <Tooltip
               title="hej"
@@ -115,6 +130,12 @@ export const DrivingPage = () => {
           </Grid>
         </Grid>
       </form>
+      <Dialog
+        open={isDrivingModalOpen}
+        onClose={handleDrivingModalClose}>
+        <DialogTitle>{TEXT.expense_submitted}</DialogTitle>
+        <Button onClick={handleDrivingModalClose}>{TEXT.close}</Button>
+      </Dialog>
       <Dialog
         open={infoDrivingDialogOpen}
         onClose={handleDrivingInfoDialogClose}>

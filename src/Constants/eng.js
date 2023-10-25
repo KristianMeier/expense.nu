@@ -138,10 +138,10 @@ export const eng = {
 
   driving_modal_title: 'Når du klikker Registrer',
   driving_modal_info: [
-    '1. The club already has your information, as your login is tied to the membership number.',
-    '2. Simply enter “From Address”, “Purpose”, “Date”, and “Kilometers”.',
+    '1. The club already has your information as well as the info from when you created this user.',
+    '2. Simply enter for each trip: “From Address”, "To Address" “Purpose”, “Date”, and “Kilometers”.',
     '3. An email will be sent to you with a receipt.',
-    '4. An email will be sent to the accountant advising of the travel reimbursement.',
+    '4. An email will be sent to the accountant informing about the travel reimbursement.',
   ],
   volunteer_modal_title: "When you click 'Save user'",
   volunteer_modal_info: [
@@ -149,7 +149,15 @@ export const eng = {
     '2. The user receives an email with login information.',
     '3. The accountant receives an email that an account should be created for the user.',
   ],
-  driving: 'Driving Reembursement',
-  receipt: 'Expence Management',
+  driving_title: 'Driving Reembursement',
+  receipt_title: 'Expence Management',
+  create_user_title: 'Create your Account',
   volunteer: 'Add a Volunteer',
+  driving_date: 'Date',
+  driving_kilometers: 'Kilometers',
+  driving_from: 'From Address',
+  driving_to: 'To Address',
+  driving_purpose: 'Purpose',
+  driving_submit: 'Register',
+  driving_getting_temp: 'Getting to the event',
 }

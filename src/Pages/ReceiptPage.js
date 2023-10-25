@@ -10,11 +10,11 @@ import {
 import InfoIcon from '@mui/icons-material/Info'
 import { UploadButton } from '../Components/UploadButton'
 import { useAppContext } from '../Context/AppContext'
-import { RegistrerDialogs } from '../Components/RegistrerComponents/RegistrerModals'
+import { RegistrerDialogs } from '../Components/ReceiptComponents/ReceiptModals'
 import { useLanguageContext } from '../Context/LanguageContext'
 import { Title } from '../Components/Title'
 
-export const RegistrerPage = () => {
+export const ReceiptPage = () => {
   const {
     handleSubmit,
     handleDateChange,
@@ -34,7 +34,7 @@ export const RegistrerPage = () => {
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
-      <Title>{TEXT.receipt}</Title>
+      <Title>{TEXT.receipt_title}</Title>
       <form onSubmit={handleSubmit}>
         <Grid
           container
@@ -43,6 +43,7 @@ export const RegistrerPage = () => {
             item
             xs={12}>
             <TextField
+              required
               fullWidth
               label={TEXT.receipt_date}
               type="date"
@@ -73,6 +74,7 @@ export const RegistrerPage = () => {
             <TextField
               select
               fullWidth
+              required
               label={TEXT.category}
               value={category}
               onChange={handleCatoryChange}>
@@ -89,6 +91,7 @@ export const RegistrerPage = () => {
             item
             xs={12}>
             <TextField
+              required
               fullWidth
               label={TEXT.commentary}
               value={description}

@@ -5,7 +5,6 @@ import {
   Grid,
   IconButton,
   Tooltip,
-  MenuItem,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -13,29 +12,39 @@ import {
   DialogActions,
 } from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info'
-import { UploadButton } from '../Components/UploadButton'
 import { useState } from 'react'
 import { useLanguageContext } from '../Context/LanguageContext'
 import { Title } from '../Components/Title'
 
-export const VolunteerPage = () => {
-  const [infoDrivingDialogOpen, setDrivingInfoDialogOpen] = useState(false)
+export const CreateUserPage = () => {
+  const [infoCreateUserDialogOpen, setCreateUserInfoDialogOpen] =
+    useState(false)
+  const [isCreateUserModalOpen, setIsCreateUserModalOpen] = useState(false)
   const { TEXT } = useLanguageContext()
 
-  const handleDrivingInfoDialogOpen = () => {
-    setDrivingInfoDialogOpen(true)
+  const handleCreateUserInfoDialogOpen = () => {
+    setCreateUserInfoDialogOpen(true)
   }
 
-  const handleDrivingInfoDialogClose = () => {
-    setDrivingInfoDialogOpen(false)
+  const handleCreateUserInfoDialogClose = () => {
+    setCreateUserInfoDialogOpen(false)
+  }
+
+  const handleCreateUserModalClose = () => {
+    setIsCreateUserModalOpen(false)
+  }
+
+  const handleCreateUserSubmit = (e) => {
+    e.preventDefault()
+    setIsCreateUserModalOpen(true)
   }
 
   return (
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
-      <Title>{TEXT.volunteer}</Title>
-      <form onSubmit={() => console.log('hej')}>
+      <Title>{TEXT.create_user_title}</Title>
+      <form onSubmit={handleCreateUserSubmit}>
         <Grid
           container
           spacing={3}>
@@ -44,8 +53,9 @@ export const VolunteerPage = () => {
             xs={12}>
             <TextField
               fullWidth
-              label="hej"
-              value="hej"
+              required
+              label={TEXT.driving_date}
+              value="2021-01-01"
               type="date"
               onChange={() => console.log('hej')}
               InputLabelProps={{
@@ -60,8 +70,8 @@ export const VolunteerPage = () => {
               fullWidth
               required
               type="number"
-              label="hej"
-              value={3}
+              label={TEXT.driving_kilometers}
+              value={12345}
               onChange={() => console.log('hej')}
             />
           </Grid>
@@ -69,28 +79,33 @@ export const VolunteerPage = () => {
             item
             xs={12}>
             <TextField
-              select
               fullWidth
-              label="hej"
-              value="hej"
-              onChange={() => console.log('hej')}>
-              <MenuItem>Hej</MenuItem>
-            </TextField>
+              required
+              label={TEXT.driving_from}
+              value="Testvej 123, 1234 Testby, Danmark"
+              onChange={() => console.log('hej')}></TextField>
           </Grid>
           <Grid
             item
             xs={12}>
             <TextField
               fullWidth
-              label="hej"
-              value="hej"
+              required
+              label={TEXT.driving_to}
+              value="Testvej 456, 5678 Testby, Danmark"
               onChange={() => console.log('hej')}
             />
           </Grid>
           <Grid
             item
             xs={12}>
-            <UploadButton />
+            <TextField
+              fullWidth
+              required
+              label={TEXT.driving_purpose}
+              value={TEXT.driving_getting_temp}
+              onChange={() => console.log('hej')}
+            />
           </Grid>
           <Grid
             item
@@ -101,14 +116,14 @@ export const VolunteerPage = () => {
               variant="contained"
               color="primary"
               type="submit">
-              Hej
+              {TEXT.driving_submit}
             </Button>
             <Tooltip
               title="hej"
               sx={{ ml: 1 }}>
               <IconButton
                 size={'medium'}
-                onClick={handleDrivingInfoDialogOpen}>
+                onClick={handleCreateUserInfoDialogOpen}>
                 <InfoIcon />
               </IconButton>
             </Tooltip>
@@ -116,16 +131,22 @@ export const VolunteerPage = () => {
         </Grid>
       </form>
       <Dialog
-        open={infoDrivingDialogOpen}
-        onClose={handleDrivingInfoDialogClose}>
-        <DialogTitle>{TEXT.volunteer_modal_title}</DialogTitle>
+        open={isCreateUserModalOpen}
+        onClose={handleCreateUserModalClose}>
+        <DialogTitle>{TEXT.expense_submitted}</DialogTitle>
+        <Button onClick={handleCreateUserModalClose}>{TEXT.close}</Button>
+      </Dialog>
+      <Dialog
+        open={infoCreateUserDialogOpen}
+        onClose={handleCreateUserInfoDialogClose}>
+        <DialogTitle>{TEXT.driving_modal_title}</DialogTitle>
         <DialogContent>
-          {TEXT.volunteer_modal_info.map((content, index) => (
+          {TEXT.driving_modal_info.map((content, index) => (
             <DialogContentText key={index}>{content}</DialogContentText>
           ))}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleDrivingInfoDialogClose}>Luk</Button>
+          <Button onClick={handleCreateUserInfoDialogClose}>Luk</Button>
         </DialogActions>
       </Dialog>
     </Container>

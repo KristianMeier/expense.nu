@@ -1,12 +1,11 @@
 import { Layout } from './Components/Layouts'
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { NAVIGATION } from './Constants/constants'
-import { RegistrerPage } from './Pages/RegistrerPage'
+import { ReceiptPage } from './Pages/ReceiptPage'
+import { DrivingPage } from './Pages/DrivingPage'
+import { CreateUserPage } from './Pages/CreateUserPage'
 // import { LogindPage } from './Pages/LogIndPage'
 // import { Test } from './Pages/Test'
-// import { DrivingPage } from './Pages/DrivingPage'
-// import { VolunteerPage } from './Pages/VolunteerPage'
 // import { FrontPage } from './Pages/FrontPage'
 
 export const App = () => {
@@ -16,7 +15,16 @@ export const App = () => {
         <Route element={<Layout />}>
           <Route
             path={NAVIGATION.registrer}
-            element={<RegistrerPage />}
+            element={<ReceiptPage />}
+          />
+          <Route
+            path={NAVIGATION.driving}
+            element={<DrivingPage />}
+          />
+
+          <Route
+            path={NAVIGATION.create_user}
+            element={<CreateUserPage />}
           />
           {/* <Route
             path={NAVIGATION.forsiden}
@@ -29,15 +37,7 @@ export const App = () => {
           <Route
             path={NAVIGATION.test}
             element={<Test />}
-          />
-          <Route
-            path={NAVIGATION.driving}
-            element={<DrivingPage />}
-          />
-          <Route
-            path={NAVIGATION.volunteer}
-            element={<VolunteerPage />}
-          /> */}
+          />*/}
         </Route>
       </Routes>
     </BrowserRouter>
