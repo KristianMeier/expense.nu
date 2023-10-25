@@ -3,36 +3,31 @@ import {
   TextField,
   Button,
   Grid,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
   IconButton,
   Tooltip,
+  MenuItem,
 } from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info'
 import { UploadButton } from '../Components/UploadButton'
 import { useAppContext } from '../Context/AppContext'
 import { Header } from '../Components/Header'
-import { AccountMenu } from '../Components/AccountMenu'
+import { AccountMenu } from '../Components/NotUsedAtm/AccountMenu'
 import { TEXT } from '../Constants/constants'
+import { RegistrerDialogs } from '../Components/RegistrerComponents/RegistrerModals'
 
 export const RegistrerPage = () => {
   const {
     handleSubmit,
-    isModalOpen,
     handleDateChange,
+    handleAmountChange,
+    handleCatoryChange,
     handleDescriptionChange,
     date,
     amount,
+    category,
     description,
-    handleModalClose,
     isNotNumber,
-    handleAmountChange,
-    infoDialogOpen,
     handleInfoDialogOpen,
-    handleInfoDialogClose,
   } = useAppContext()
 
   return (
@@ -77,6 +72,24 @@ export const RegistrerPage = () => {
             item
             xs={12}>
             <TextField
+              select
+              fullWidth
+              label={TEXT.category}
+              value={category}
+              onChange={handleCatoryChange}>
+              {TEXT.categories.map((item) => (
+                <MenuItem
+                  key={item}
+                  value={item}>
+                  {item}
+                </MenuItem>
+              ))}
+            </TextField>
+          </Grid>
+          <Grid
+            item
+            xs={12}>
+            <TextField
               fullWidth
               label={TEXT.commentary}
               value={description}
@@ -111,25 +124,7 @@ export const RegistrerPage = () => {
           </Grid>
         </Grid>
       </form>
-      <Dialog
-        open={isModalOpen}
-        onClose={handleModalClose}>
-        <DialogTitle>{TEXT.expense_submitted}</DialogTitle>
-        <Button onClick={handleModalClose}>{TEXT.close}</Button>
-      </Dialog>
-      <Dialog
-        open={infoDialogOpen}
-        onClose={handleInfoDialogClose}>
-        <DialogTitle>{TEXT.registrer_modal_title}</DialogTitle>
-        <DialogContent>
-          {TEXT.registrer_modal_info.map((content, index) => (
-            <DialogContentText key={index}>{content}</DialogContentText>
-          ))}
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleInfoDialogClose}>Luk</Button>
-        </DialogActions>
-      </Dialog>
+      <RegistrerDialogs />
     </Container>
   )
 }

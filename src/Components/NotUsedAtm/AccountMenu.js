@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import Box from '@mui/material/Box'
 import { useNavigate } from 'react-router-dom'
-import { ACCOUNT_MENU } from '../Constants/constants'
+import { ACCOUNT_MENU } from '../../Constants/constants'
 
 export const AccountMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null)

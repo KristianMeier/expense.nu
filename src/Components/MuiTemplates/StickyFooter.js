@@ -15,7 +15,7 @@ function Copyright() {
       <Link
         color="inherit"
         href="https://mui.com/">
-        Your Website
+        www.expense.nu
       </Link>{' '}
       {new Date().getFullYear()}
     </Typography>

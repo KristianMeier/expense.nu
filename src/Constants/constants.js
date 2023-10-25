@@ -25,8 +25,8 @@ export const USERS = {
 
 export const NAVIGATION = {
   registrer: {
-    path: '/registrer',
-    content: 'Registrer udlæg',
+    path: '/demo',
+    content: 'Demo',
   },
   historik: {
     path: '/historik',
@@ -60,6 +60,10 @@ export const ACCOUNT_MENU = [
     content: NAVIGATION.logUd.content,
   },
 ]
+
+// export const MENU_ITEMS = [TEXT.features, TEXT.pricing, TEXT.about_us]
+
+export const MENU_ITEMS_DEMO = []
 
 export const TEXT = {
   long_text:
@@ -97,4 +101,22 @@ export const TEXT = {
   how_to_use: 'How to use the app',
   expense_submitted: 'Expense submitted',
   input_number: 'Please input a number',
+  category: 'Category',
+  categories: [
+    'Hotel',
+    'Taxi',
+    'Forplejning',
+    'Repræsentation',
+    'Gaver',
+    'Andet',
+    'Arrangementer',
+  ],
+  default_category: 'Arrangementer',
+  demo: 'Demo',
+  expense_management: 'Demo',
+  features: 'Features',
+  about_us: 'About Us',
+  pricing: 'Pricing',
+  english: 'English',
+  danish: 'Danish',
 }

@@ -5,6 +5,7 @@ const AppContext = createContext()
 
 export const AppContextProvider = ({ children }) => {
   const [amount, setAmount] = useState('')
+  const [category, setCategory] = useState('')
   const [description, setDescription] = useState('')
   const [receipt, setReceipt] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -25,6 +26,7 @@ export const AppContextProvider = ({ children }) => {
     const formData = {
       date: date,
       amount: amount,
+      category: category,
       description: description,
       receipt: 'demo_image.jpg',
     }
@@ -54,10 +56,11 @@ export const AppContextProvider = ({ children }) => {
   }
 
   const resetData = () => {
+    setDate(getCurrentDate())
+    setCategory('')
     setAmount('')
     setDescription('')
     setReceipt(null)
-    setDate(getCurrentDate())
   }
 
   const handleModalClose = () => {
@@ -79,6 +82,10 @@ export const AppContextProvider = ({ children }) => {
     setDate(e.target.value)
   }
 
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value)
+  }
+
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value)
   }
@@ -92,15 +99,17 @@ export const AppContextProvider = ({ children }) => {
       value={{
         handleSubmit,
         handleDateChange,
+        handleAmountChange,
+        handleCategoryChange,
         handleDescriptionChange,
         handleModalClose,
-        handleAmountChange,
         handleReciptUpload,
         resetData,
         receipt,
         isModalOpen,
         date,
         amount,
+        category,
         description,
         isNotNumber,
         infoDialogOpen,

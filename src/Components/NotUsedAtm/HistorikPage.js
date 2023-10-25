@@ -11,9 +11,9 @@ import {
   Paper,
   Box,
 } from '@mui/material'
-import { Header } from '../Components/Header'
-import { AccountMenu } from '../Components/AccountMenu'
-import { TEXT } from '../Constants/constants'
+import { Header } from '../Header'
+import { AccountMenu } from './AccountMenu'
+import { TEXT } from '../../Constants/constants'
 
 export const HistorikPage = () => {
   const [receipts, setReceipts] = useState([])
