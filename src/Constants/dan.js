@@ -94,4 +94,47 @@ export const dan = {
       image: 'images/Time_saver_accountant_and_person.avif',
     },
   ],
+  tiers: [
+    {
+      title: 'Gratis',
+      price: '0 kr.',
+      description: [
+        '3 brugere inkluderet',
+        'Kørselsgodtgørelse',
+        'Integrationer',
+        'E-mail support',
+      ],
+      buttonText: 'Tilmeld dig gratis',
+      buttonVariant: 'outlined',
+    },
+    {
+      title: 'Basis',
+      subheader: 'Mest populær',
+      price: '19 kr.',
+      description: [
+        '10 brugere inkluderet',
+        'Kørselsgodtgørelse',
+        'Integrationer',
+        'E-mail support',
+      ],
+      buttonText: 'Kom igang',
+      buttonVariant: 'contained',
+    },
+    {
+      title: 'Premium',
+      price: '49 kr.',
+      description: [
+        '50 brugere inkluderet',
+        'Kørselsgodtgørelse',
+        'Integrationer',
+        'E-mail support',
+      ],
+      buttonText: 'Kom igang',
+      buttonVariant: 'outlined',
+    },
+  ],
+  pricing_title: 'Pisniveauer',
+  pricing_subtitle:
+    'Inklusive alle tre prisniveauer er der e-mail support, Kørselsgodtgørelse og integrationer til e-conomic, Billy og Dinero.',
+  month: '/md',
 }

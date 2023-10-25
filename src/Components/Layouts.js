@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom'
-import StickyFooter from './MuiTemplates/StickyFooter'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { CssBaseline, GlobalStyles } from '@mui/material'
 import { AppBarGrey } from './AppBarGrey'
+import { Footer } from './Footer'
 
 const defaultTheme = createTheme()
 
@@ -14,6 +14,6 @@ export const Layout = () => (
     <CssBaseline />
     <AppBarGrey />
     <Outlet />
-    <StickyFooter />
+    <Footer />
   </ThemeProvider>
 )

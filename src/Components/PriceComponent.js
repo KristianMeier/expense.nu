@@ -8,48 +8,11 @@ import Grid from '@mui/material/Grid'
 import StarIcon from '@mui/icons-material/StarBorder'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
-
-const tiers = [
-  {
-    title: 'Free',
-    price: '0',
-    description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
-      'Email support',
-    ],
-    buttonText: 'Sign up for free',
-    buttonVariant: 'outlined',
-  },
-  {
-    title: 'Pro',
-    subheader: 'Most popular',
-    price: '15',
-    description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
-    ],
-    buttonText: 'Get started',
-    buttonVariant: 'contained',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
-    ],
-    buttonText: 'Contact us',
-    buttonVariant: 'outlined',
-  },
-]
+import { useLanguageContext } from '../Context/LanguageContext'
 
 export const PriceComponent = () => {
+  const { TEXT } = useLanguageContext()
+
   return (
     <>
       <Container
@@ -63,16 +26,14 @@ export const PriceComponent = () => {
           align="center"
           color="text.primary"
           gutterBottom>
-          Pricing
+          {TEXT.pricing_title}
         </Typography>
         <Typography
           variant="h5"
           align="center"
           color="text.secondary"
           component="p">
-          Quickly build an effective pricing table for your potential customers
-          with this layout. It&apos;s built with default MUI components with
-          little customization.
+          {TEXT.pricing_subtitle}
         </Typography>
       </Container>
       {/* End hero unit */}
@@ -83,7 +44,7 @@ export const PriceComponent = () => {
           container
           spacing={5}
           alignItems="flex-end">
-          {tiers.map((tier) => (
+          {TEXT.tiers.map((tier) => (
             // Enterprise card is full width at sm breakpoint
             <Grid
               item
@@ -119,12 +80,12 @@ export const PriceComponent = () => {
                       component="h2"
                       variant="h3"
                       color="text.primary">
-                      ${tier.price}
+                      {tier.price}
                     </Typography>
                     <Typography
                       variant="h6"
                       color="text.secondary">
-                      /mo
+                      {TEXT.month}
                     </Typography>
                   </Box>
                   <ul>

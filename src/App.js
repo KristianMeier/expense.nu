@@ -5,6 +5,7 @@ import { ForsidePage } from './Pages/ForsidePage'
 import { NAVIGATION } from './Constants/constants'
 import { Layout } from './Components/Layouts'
 import { Test } from './Pages/Test'
+import { GodtgoerelsePage } from './Pages/GodtgoerelsePage'
 
 export const App = () => {
   return (
@@ -26,6 +27,10 @@ export const App = () => {
           <Route
             path={NAVIGATION.test}
             element={<Test />}
+          />
+          <Route
+            path={NAVIGATION.godtgoerelse}
+            element={<GodtgoerelsePage />}
           />
         </Route>
       </Routes>

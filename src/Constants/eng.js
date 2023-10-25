@@ -92,4 +92,47 @@ export const eng = {
       image: 'images/Time_saver_accountant_and_person.avif',
     },
   ],
+  tiers: [
+    {
+      title: 'Free',
+      price: '0 kr.',
+      description: [
+        '3 users included',
+        'Driving Allowence',
+        'Integrations',
+        'Email support',
+      ],
+      buttonText: 'Sign up for free',
+      buttonVariant: 'outlined',
+    },
+    {
+      title: 'Basic',
+      subheader: 'Most popular',
+      price: '19 kr.',
+      description: [
+        '10 users included',
+        'Driving Allowence',
+        'Integrations',
+        'E-mail support',
+      ],
+      buttonText: 'Get started',
+      buttonVariant: 'contained',
+    },
+    {
+      title: 'Premium',
+      price: '49 kr.',
+      description: [
+        '50 users included',
+        'Driving Allowence',
+        'Integrations',
+        'E-mail support',
+      ],
+      buttonText: 'Get started',
+      buttonVariant: 'outlined',
+    },
+  ],
+  pricing_title: 'Pricing',
+  pricing_subtitle:
+    'Including all three price levels, there are email support, driving allance and integrations to e-conomic, Billy and Dinero.',
+  month: '/mo',
 }
