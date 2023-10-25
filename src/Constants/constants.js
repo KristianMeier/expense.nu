@@ -5,7 +5,14 @@ export const USERS = {
 
 export const NAVIGATION = {
   registrer: '/demo',
-  historik: '/history',
   logInd: '/login',
   forsiden: '/',
+  test: '/test',
+  sigUp: '/signup',
+}
+
+export const DEMO_NAVIGATION = {
+  registrer: '/demo',
+  sigUp: '/signUp',
+  logInd: '/login',
 }

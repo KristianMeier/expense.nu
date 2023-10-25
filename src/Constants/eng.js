@@ -49,4 +49,47 @@ export const eng = {
   expense_management: 'Demo',
   menu_items_demo: [],
   menu_items: ['Features', 'Pricing', 'About Us'],
+  try_it_for_free: 'Try it for Free',
+  see_it_in_action: 'See it in action',
+  feature_heading: 'Refundering.dk',
+  feature_description:
+    'The simple accounting system for smaller unions with volunteers. Integration with e-conomic, Billy and Dinero, you make it easier than ever for volunteer and bookkeeper.',
+  try_it: 'Try it',
+  read_more: 'Read More',
+  cards: [
+    {
+      heading: 'Integration',
+      description:
+        'It integrates with Accouting systems such as e-conomic, Billy and Dinero',
+      image: 'images/integration_eco_bil_dinero.jpeg',
+    },
+    {
+      heading: 'Automisation',
+      description:
+        'The receipt goes automatically into the Accouting Software and Bookkeeper is notified',
+      image: 'images/cashflow_two.jpeg',
+    },
+    {
+      heading: 'Activities',
+      description: 'Less time spend for the volunteers doing expenses',
+      image: 'images/easy_activities.jpeg',
+    },
+    {
+      heading: "Excel isn't needed",
+      description: 'The volunteer snaps a photo and specifies the amount',
+      image: 'images/excel.jpeg',
+    },
+    {
+      heading: 'Overview',
+      description:
+        'In the overview Section you can see the history of your expenses.',
+      image: 'images/overview_receipts.jpeg',
+    },
+    {
+      heading: 'Bookkeeper',
+      description:
+        'Less manual work for the bookkeeper, due to the integration.',
+      image: 'images/Time_saver_accountant_and_person.avif',
+    },
+  ],
 }

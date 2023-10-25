@@ -50,4 +50,48 @@ export const dan = {
   expense_management: 'Demo',
   menu_items_demo: [],
   menu_items: ['Funktioner', 'Pris', 'Om os'],
+
+  try_it_for_free: 'Prøv det gratis',
+  see_it_in_action: 'Se det i aktion',
+  feature_heading: 'Refundering.dk',
+  feature_description:
+    'Det enkle regnskabssystem for mindre foreninger med frivillige. Integration med e-conomic, Billy og Dinero gør det nemmere end nogensinde for frivillige og bogholdere.',
+  try_it: 'Prøv det',
+  read_more: 'Læs mere',
+  cards: [
+    {
+      heading: 'Integration',
+      description:
+        'Den integrerer med regnskabssystemer som e-conomic, Billy og Dinero',
+      image: 'images/integration_eco_bil_dinero.jpeg',
+    },
+    {
+      heading: 'Automatisering',
+      description:
+        'Kvitteringen går automatisk ind i regnskabssoftwaren, og bogholderen får besked',
+      image: 'images/cashflow_two.jpeg',
+    },
+    {
+      heading: 'Aktiviteter',
+      description: 'Mindre tid brugt af frivillige på at lave udgifter',
+      image: 'images/easy_activities.jpeg',
+    },
+    {
+      heading: 'Excel er ikke nødvendig',
+      description: 'Frivillige tager et billede og angiver beløbet',
+      image: 'images/excel.jpeg',
+    },
+    {
+      heading: 'Oversigt',
+      description:
+        'I oversigtssektionen kan du se historikken over dine udgifter.',
+      image: 'images/overview_receipts.jpeg',
+    },
+    {
+      heading: 'Bogholder',
+      description:
+        'Mindre manuelt arbejde for bogholderen på grund af integrationen.',
+      image: 'images/Time_saver_accountant_and_person.avif',
+    },
+  ],
 }

@@ -4,6 +4,7 @@ import { LogindPage } from './Pages/LogIndPage'
 import { ForsidePage } from './Pages/ForsidePage'
 import { NAVIGATION } from './Constants/constants'
 import { Layout } from './Components/Layouts'
+import { Test } from './Pages/Test'
 
 export const App = () => {
   return (
@@ -21,6 +22,10 @@ export const App = () => {
           <Route
             path={NAVIGATION.registrer}
             element={<RegistrerPage />}
+          />
+          <Route
+            path={NAVIGATION.test}
+            element={<Test />}
           />
         </Route>
       </Routes>
