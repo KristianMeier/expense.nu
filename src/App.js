@@ -1,11 +1,12 @@
 import { RegistrerPage } from './Pages/RegistrerPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { LogindPage } from './Pages/LogIndPage'
-import { ForsidePage } from './Pages/ForsidePage'
 import { NAVIGATION } from './Constants/constants'
 import { Layout } from './Components/Layouts'
 import { Test } from './Pages/Test'
-import { GodtgoerelsePage } from './Pages/GodtgoerelsePage'
+import { DrivingPage } from './Pages/DrivingPage'
+import { VolunteerPage } from './Pages/VolunteerPage'
+import { FrontPage } from './Pages/FrontPage'
 
 export const App = () => {
   return (
@@ -14,7 +15,7 @@ export const App = () => {
         <Route element={<Layout />}>
           <Route
             index
-            element={<ForsidePage />}
+            element={<FrontPage />}
           />
           <Route
             path={NAVIGATION.logInd}
@@ -29,8 +30,12 @@ export const App = () => {
             element={<Test />}
           />
           <Route
-            path={NAVIGATION.godtgoerelse}
-            element={<GodtgoerelsePage />}
+            path={NAVIGATION.driving}
+            element={<DrivingPage />}
+          />
+          <Route
+            path={NAVIGATION.volunteers}
+            element={<VolunteerPage />}
           />
         </Route>
       </Routes>

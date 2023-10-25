@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
-import { useLanguageContext } from '../../Context/LanguageContext'
+import { useLanguageContext } from '../../../Context/LanguageContext'
 
 export const ForsideRightTwo = () => {
   const { TEXT } = useLanguageContext()

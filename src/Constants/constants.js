@@ -9,7 +9,8 @@ export const NAVIGATION = {
   forsiden: '/',
   test: '/test',
   sigUp: '/signup',
-  godtgoerelse: '/godtgoerelse',
+  driving: '/driving',
+  volunteers: '/volunteers',
 }
 
 export const DEMO_NAVIGATION = {

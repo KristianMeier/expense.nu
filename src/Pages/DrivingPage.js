@@ -6,36 +6,36 @@ import {
   IconButton,
   Tooltip,
   MenuItem,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info'
 import { UploadButton } from '../Components/UploadButton'
-import { useAppContext } from '../Context/AppContext'
-import { RegistrerDialogs } from '../Components/RegistrerComponents/RegistrerModals'
+import { useState } from 'react'
 import { useLanguageContext } from '../Context/LanguageContext'
 import { Title } from '../Components/Title'
 
-export const RegistrerPage = () => {
-  const {
-    handleSubmit,
-    handleDateChange,
-    handleAmountChange,
-    handleCatoryChange,
-    handleDescriptionChange,
-    date,
-    amount,
-    category,
-    description,
-    isNotNumber,
-    handleInfoDialogOpen,
-  } = useAppContext()
+export const DrivingPage = () => {
+  const [infoDrivingDialogOpen, setDrivingInfoDialogOpen] = useState(false)
   const { TEXT } = useLanguageContext()
+
+  const handleDrivingInfoDialogOpen = () => {
+    setDrivingInfoDialogOpen(true)
+  }
+
+  const handleDrivingInfoDialogClose = () => {
+    setDrivingInfoDialogOpen(false)
+  }
 
   return (
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
-      <Title>Udlægshåndtering</Title>
-      <form onSubmit={handleSubmit}>
+      <Title>Kørselsgodtgørelse</Title>
+      <form onSubmit={() => console.log('hej')}>
         <Grid
           container
           spacing={3}>
@@ -44,10 +44,10 @@ export const RegistrerPage = () => {
             xs={12}>
             <TextField
               fullWidth
-              label={TEXT.receipt_date}
+              label="hej"
+              value="hej"
               type="date"
-              value={date}
-              onChange={handleDateChange}
+              onChange={() => console.log('hej')}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -60,11 +60,9 @@ export const RegistrerPage = () => {
               fullWidth
               required
               type="number"
-              label={TEXT.receipt_amount}
-              value={amount}
-              onChange={handleAmountChange}
-              error={isNotNumber}
-              helperText={isNotNumber ? TEXT.input_number : ''}
+              label="hej"
+              value={3}
+              onChange={() => console.log('hej')}
             />
           </Grid>
           <Grid
@@ -73,16 +71,10 @@ export const RegistrerPage = () => {
             <TextField
               select
               fullWidth
-              label={TEXT.category}
-              value={category}
-              onChange={handleCatoryChange}>
-              {TEXT.categories.map((item) => (
-                <MenuItem
-                  key={item}
-                  value={item}>
-                  {item}
-                </MenuItem>
-              ))}
+              label="hej"
+              value="hej"
+              onChange={() => console.log('hej')}>
+              <MenuItem>Hej</MenuItem>
             </TextField>
           </Grid>
           <Grid
@@ -90,9 +82,9 @@ export const RegistrerPage = () => {
             xs={12}>
             <TextField
               fullWidth
-              label={TEXT.commentary}
-              value={description}
-              onChange={handleDescriptionChange}
+              label="hej"
+              value="hej"
+              onChange={() => console.log('hej')}
             />
           </Grid>
           <Grid
@@ -109,21 +101,33 @@ export const RegistrerPage = () => {
               variant="contained"
               color="primary"
               type="submit">
-              {TEXT.submit_expense}
+              Hej
             </Button>
             <Tooltip
-              title={TEXT.how_to_use}
+              title="hej"
               sx={{ ml: 1 }}>
               <IconButton
                 size={'medium'}
-                onClick={handleInfoDialogOpen}>
+                onClick={handleDrivingInfoDialogOpen}>
                 <InfoIcon />
               </IconButton>
             </Tooltip>
           </Grid>
         </Grid>
       </form>
-      <RegistrerDialogs />
+      <Dialog
+        open={infoDrivingDialogOpen}
+        onClose={handleDrivingInfoDialogClose}>
+        <DialogTitle>{TEXT.driving_modal_title}</DialogTitle>
+        <DialogContent>
+          {TEXT.driving_modal_info.map((content, index) => (
+            <DialogContentText key={index}>{content}</DialogContentText>
+          ))}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDrivingInfoDialogClose}>Luk</Button>
+        </DialogActions>
+      </Dialog>
     </Container>
   )
 }

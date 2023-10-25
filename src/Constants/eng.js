@@ -51,7 +51,7 @@ export const eng = {
   menu_items: ['Features', 'Pricing', 'About Us'],
   try_it_for_free: 'Try it for Free',
   see_it_in_action: 'See it in action',
-  feature_heading: 'Refundering.dk',
+  feature_heading: 'RefundVolunteers',
   feature_description:
     'The simple accounting system for smaller unions with volunteers. Integration with e-conomic, Billy and Dinero, you make it easier than ever for volunteer and bookkeeper.',
   try_it: 'Try it',
@@ -135,4 +135,12 @@ export const eng = {
   pricing_subtitle:
     'Including all three price levels, there are email support, driving allance and integrations to e-conomic, Billy and Dinero.',
   month: '/mo',
+
+  driving_modal_title: 'Når du klikker Registrer',
+  driving_modal_info: [
+    '1. The club already has your information, as your login is tied to the membership number.',
+    '2. Simply enter “From Address”, “Purpose”, “Date”, and “Kilometers”.',
+    '3. An email will be sent to you with a receipt.',
+    '4. An email will be sent to the accountant advising of the travel reimbursement.',
+  ],
 }

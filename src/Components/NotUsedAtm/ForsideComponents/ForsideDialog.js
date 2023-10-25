@@ -7,8 +7,8 @@ import {
   DialogTitle,
 } from '@mui/material'
 import emailjs from 'emailjs-com'
-import { useEmailContext } from '../../Context/EmailContext'
-import { useLanguageContext } from '../../Context/LanguageContext'
+import { useEmailContext } from '../../../Context/EmailContext'
+import { useLanguageContext } from '../../../Context/LanguageContext'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 

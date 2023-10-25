@@ -36,7 +36,7 @@ export const RegistrerDialogs = () => {
           ))}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleInfoDialogClose}>Luk</Button>
+          <Button onClick={handleInfoDialogClose}>{TEXT.close}</Button>
         </DialogActions>
       </Dialog>
     </>

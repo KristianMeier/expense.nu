@@ -2,9 +2,9 @@ import { Button, TextField, Typography, Grid, Box } from '@mui/material'
 import emailjs from 'emailjs-com'
 
 import { useNavigate } from 'react-router-dom'
-import { useEmailContext } from '../../Context/EmailContext'
-import { NAVIGATION } from '../../Constants/constants'
-import { useLanguageContext } from '../../Context/LanguageContext'
+import { useEmailContext } from '../../../Context/EmailContext'
+import { NAVIGATION } from '../../../Constants/constants'
+import { useLanguageContext } from '../../../Context/LanguageContext'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 

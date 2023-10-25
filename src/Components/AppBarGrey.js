@@ -10,12 +10,13 @@ export const AppBarGrey = () => {
 
   return (
     <AppBar
-      position="static"
+      position="sticky"
       color="default"
       elevation={0}
       sx={{
         borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
         mb: 3,
+        zIndex: (theme) => theme.zIndex.drawer + 1,
       }}>
       <Toolbar sx={{ flexWrap: 'wrap' }}>
         <Typography

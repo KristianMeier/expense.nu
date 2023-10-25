@@ -1,12 +1,12 @@
 import { Container, Grid } from '@mui/material'
 import emailjs from 'emailjs-com'
-import { Header } from '../Components/Header'
-import { ForsideRight } from '../Components/ForsideComponents/ForsideRight'
-import { ForsideDialog } from '../Components/ForsideComponents/ForsideDialog'
-import { ForsideLeft } from '../Components/ForsideComponents/ForsideLeft'
-import { ForsideLeftTwo } from '../Components/ForsideComponents/ForsideLeftTwo'
-import { ForsideRightTwo } from '../Components/ForsideComponents/ForsideRightTwo'
-import { useLanguageContext } from '../Context/LanguageContext'
+import { Header } from '../Header'
+import { ForsideRight } from './ForsideComponents/ForsideRight'
+import { ForsideDialog } from './ForsideComponents/ForsideDialog'
+import { ForsideLeft } from './ForsideComponents/ForsideLeft'
+import { ForsideLeftTwo } from './ForsideComponents/ForsideLeftTwo'
+import { ForsideRightTwo } from './ForsideComponents/ForsideRightTwo'
+import { useLanguageContext } from '../../Context/LanguageContext'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 

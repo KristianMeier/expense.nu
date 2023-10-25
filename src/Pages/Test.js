@@ -1,11 +1,10 @@
-import { FeatureComponent } from '../Components/FeatureComponent'
-import { PriceComponent } from '../Components/PriceComponent'
+import { Container } from '@mui/material'
+import { Title } from '../Components/Title'
 
 export const Test = () => {
   return (
-    <>
-      <FeatureComponent />
-      <PriceComponent />
-    </>
+    <Container maxWidth="sm">
+      <Title> TitlePage</Title>
+    </Container>
   )
 }

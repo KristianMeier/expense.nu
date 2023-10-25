@@ -13,7 +13,6 @@ export const dan = {
     '1. Bilag og data sendes til Kassekladen i vores regnskabsprogram.',
     '2. Der bliver sendt en email til dig med en kvittering.',
     '3. Der bliver sendt en email til regnskabsføren om, at der er et udlæg, der skal behandles.',
-    "4. Du kan se dit udlæg i historikken under 'Historik' i menuen.",
   ],
   registrer_modal_title: 'Når du klikker registrer:',
   frontpage_title: 'Expenses.nu',
@@ -53,9 +52,9 @@ export const dan = {
 
   try_it_for_free: 'Prøv det gratis',
   see_it_in_action: 'Se det i aktion',
-  feature_heading: 'Refundering.dk',
+  feature_heading: 'RefundVolunteers',
   feature_description:
-    'Det enkle regnskabssystem for mindre foreninger med frivillige. Integration med e-conomic, Billy og Dinero gør det nemmere end nogensinde for frivillige og bogholdere.',
+    'Det enkle udlægshånteringssoftware for mindre foreninger med frivillige. Integration med e-conomic, Billy og Dinero gør det nemmere end nogensinde for frivillige og bogholdere.',
   try_it: 'Prøv det',
   read_more: 'Læs mere',
   cards: [
@@ -137,4 +136,11 @@ export const dan = {
   pricing_subtitle:
     'Inklusive alle tre prisniveauer er der e-mail support, Kørselsgodtgørelse og integrationer til e-conomic, Billy og Dinero.',
   month: '/md',
+  driving_modal_title: 'Når du klikker Registrer',
+  driving_modal_info: [
+    '1. Din info haves allerede af klubben, da dit login er bundet til medlemsnummer.',
+    '2. Indtast blot “Fra Adresse”, “Formål”, “Dato” og “Kilometer.',
+    '3. Der bliver sendt en email til dig med en kvittering.',
+    '4. Der bliver sendt en email til regnskabsføren adviserende kørselgodtgørelsen,',
+  ],
 }
