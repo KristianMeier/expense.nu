@@ -46,10 +46,7 @@ export const eng = {
   ],
   default_category: 'Events',
   demo: 'Demo',
-  expense_management: 'Expense Management',
-  features: 'Features',
-  about_us: 'About Us',
-  pricing: 'Pricing',
-  english: 'English',
-  danish: 'Danish',
+  expense_management: 'Demo',
+  menu_items_demo: [],
+  menu_items: ['Features', 'Pricing', 'About Us'],
 }

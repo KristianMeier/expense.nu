@@ -15,11 +15,11 @@ export const App = () => {
             element={<ForsidePage />}
           />
           <Route
-            path={NAVIGATION.logInd.path}
+            path={NAVIGATION.logInd}
             element={<LogindPage />}
           />
           <Route
-            path={NAVIGATION.registrer.path}
+            path={NAVIGATION.registrer}
             element={<RegistrerPage />}
           />
         </Route>

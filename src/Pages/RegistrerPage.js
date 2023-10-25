@@ -10,10 +10,8 @@ import {
 import InfoIcon from '@mui/icons-material/Info'
 import { UploadButton } from '../Components/UploadButton'
 import { useAppContext } from '../Context/AppContext'
-import { Header } from '../Components/Header'
-import { AccountMenu } from '../Components/NotUsedAtm/AccountMenu'
-import { TEXT } from '../Constants/constants'
 import { RegistrerDialogs } from '../Components/RegistrerComponents/RegistrerModals'
+import { useLanguageContext } from '../Context/LanguageContext'
 
 export const RegistrerPage = () => {
   const {
@@ -29,13 +27,12 @@ export const RegistrerPage = () => {
     isNotNumber,
     handleInfoDialogOpen,
   } = useAppContext()
+  const { TEXT } = useLanguageContext()
 
   return (
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
-      <AccountMenu />
-      <Header content={TEXT.registrer_page_header} />
       <form onSubmit={handleSubmit}>
         <Grid
           container

@@ -5,11 +5,14 @@ import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import Alert from '@mui/material/Alert'
 import { useNavigate } from 'react-router-dom'
-import { NAVIGATION, TEXT, USERS } from '../Constants/constants'
+import { NAVIGATION, USERS } from '../Constants/constants'
 import { Header } from '../Components/Header'
 import { Typography } from '@mui/material'
+import { useLanguageContext } from '../Context/LanguageContext'
 
 export const LogindPage = () => {
+  const { TEXT } = useLanguageContext()
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -18,7 +21,7 @@ export const LogindPage = () => {
   const handleLogin = () => {
     const user = USERS[username]
     if (user && user.password === password) {
-      navigate(NAVIGATION.registrer.path)
+      navigate(NAVIGATION.registrer)
     } else {
       setError(TEXT.error)
     }

@@ -8,13 +8,14 @@ import {
 } from '@mui/material'
 import emailjs from 'emailjs-com'
 import { useEmailContext } from '../../Context/EmailContext'
-import { TEXT } from '../../Constants/constants'
+import { useLanguageContext } from '../../Context/LanguageContext'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 
 export const ForsideDialog = () => {
   const { dialogOpen, dialogMessage, dialogTitle, handleCloseDialog } =
     useEmailContext()
+  const { TEXT } = useLanguageContext()
 
   return (
     <Dialog

@@ -3,13 +3,15 @@ import emailjs from 'emailjs-com'
 
 import { useNavigate } from 'react-router-dom'
 import { useEmailContext } from '../../Context/EmailContext'
-import { NAVIGATION, TEXT } from '../../Constants/constants'
+import { NAVIGATION } from '../../Constants/constants'
+import { useLanguageContext } from '../../Context/LanguageContext'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 
 export const ForsideLeft = () => {
   const navigate = useNavigate()
   const { email, handleEmailChange, handleRequestDemo } = useEmailContext()
+  const { TEXT } = useLanguageContext()
 
   return (
     <Grid
@@ -47,7 +49,7 @@ export const ForsideLeft = () => {
             variant="contained"
             color="primary"
             fullWidth
-            onClick={() => navigate(NAVIGATION.logInd.path)}
+            onClick={() => navigate(NAVIGATION.logInd)}
             style={{ height: '56px' }}>
             {TEXT.login}
           </Button>

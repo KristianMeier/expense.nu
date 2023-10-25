@@ -7,7 +7,7 @@ import {
   DialogActions,
 } from '@mui/material'
 import { useAppContext } from '../../Context/AppContext'
-import { TEXT } from '../../Constants/constants'
+import { useLanguageContext } from '../../Context/LanguageContext'
 
 export const RegistrerDialogs = () => {
   const {
@@ -16,6 +16,7 @@ export const RegistrerDialogs = () => {
     infoDialogOpen,
     handleInfoDialogClose,
   } = useAppContext()
+  const { TEXT } = useLanguageContext()
 
   return (
     <>

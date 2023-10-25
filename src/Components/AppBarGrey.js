@@ -3,18 +3,20 @@ import Button from '@mui/material/Button'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
-import { MENU_ITEMS_DEMO, TEXT } from '../Constants/constants'
 import { useLanguageContext } from '../Context/LanguageContext'
 
 export const AppBarGrey = () => {
-  const { changeLanguage, languageButtonText } = useLanguageContext()
+  const { changeLanguage, languageButtonText, TEXT } = useLanguageContext()
 
   return (
     <AppBar
       position="static"
       color="default"
       elevation={0}
-      sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}>
+      sx={{
+        borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
+        mb: 3,
+      }}>
       <Toolbar sx={{ flexWrap: 'wrap' }}>
         <Typography
           variant="h6"
@@ -24,7 +26,7 @@ export const AppBarGrey = () => {
           {TEXT.expense_management}
         </Typography>
         <nav>
-          {MENU_ITEMS_DEMO.map((item, index) => (
+          {TEXT.menu_items_demo.map((item, index) => (
             <Link
               variant="button"
               color="text.primary"

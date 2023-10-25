@@ -3,10 +3,11 @@ import { CloudUpload } from '@mui/icons-material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { green } from '@mui/material/colors'
 import { useAppContext } from '../Context/AppContext'
-import { TEXT } from '../Constants/constants'
+import { useLanguageContext } from '../Context/LanguageContext'
 
 export const UploadButton = () => {
   const { receipt, handleReciptUpload } = useAppContext()
+  const { TEXT } = useLanguageContext()
 
   return (
     <Button

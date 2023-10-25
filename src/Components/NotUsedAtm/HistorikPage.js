@@ -13,10 +13,11 @@ import {
 } from '@mui/material'
 import { Header } from '../Header'
 import { AccountMenu } from './AccountMenu'
-import { TEXT } from '../../Constants/constants'
+import { useLanguageContext } from '../../Context/LanguageContext'
 
 export const HistorikPage = () => {
   const [receipts, setReceipts] = useState([])
+  const { TEXT } = useLanguageContext()
 
   useEffect(() => {
     const storedReceipts = localStorage.getItem('formData')
