@@ -1,12 +1,13 @@
-import { RegistrerPage } from './Pages/RegistrerPage'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LogindPage } from './Pages/LogIndPage'
-import { NAVIGATION } from './Constants/constants'
 import { Layout } from './Components/Layouts'
-import { Test } from './Pages/Test'
-import { DrivingPage } from './Pages/DrivingPage'
-import { VolunteerPage } from './Pages/VolunteerPage'
-import { FrontPage } from './Pages/FrontPage'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { NAVIGATION } from './Constants/constants'
+import { RegistrerPage } from './Pages/RegistrerPage'
+// import { LogindPage } from './Pages/LogIndPage'
+// import { Test } from './Pages/Test'
+// import { DrivingPage } from './Pages/DrivingPage'
+// import { VolunteerPage } from './Pages/VolunteerPage'
+// import { FrontPage } from './Pages/FrontPage'
 
 export const App = () => {
   return (
@@ -14,16 +15,16 @@ export const App = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route
-            index
+            path={NAVIGATION.registrer}
+            element={<RegistrerPage />}
+          />
+          {/* <Route
+            path={NAVIGATION.forsiden}
             element={<FrontPage />}
           />
           <Route
             path={NAVIGATION.logInd}
             element={<LogindPage />}
-          />
-          <Route
-            path={NAVIGATION.registrer}
-            element={<RegistrerPage />}
           />
           <Route
             path={NAVIGATION.test}
@@ -36,7 +37,7 @@ export const App = () => {
           <Route
             path={NAVIGATION.volunteer}
             element={<VolunteerPage />}
-          />
+          /> */}
         </Route>
       </Routes>
     </BrowserRouter>
