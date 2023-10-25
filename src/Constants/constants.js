@@ -10,7 +10,7 @@ export const NAVIGATION = {
   test: '/test',
   sigUp: '/signup',
   driving: '/driving',
-  volunteers: '/volunteers',
+  volunteer: '/volunteer',
 }
 
 export const DEMO_NAVIGATION = {

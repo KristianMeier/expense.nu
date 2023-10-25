@@ -143,4 +143,13 @@ export const dan = {
     '3. Der bliver sendt en email til dig med en kvittering.',
     '4. Der bliver sendt en email til regnskabsføren adviserende kørselgodtgørelsen,',
   ],
+  volunteer_modal_title: 'Når du klikker "Gem bruger"',
+  volunteer_modal_info: [
+    '1. Du opretter brugeren i databasen.',
+    '2. Brugeren får en email med loginoplysninger.',
+    '3. Bogholderen får en email med, at der skal oprettes en konto til brugeren',
+  ],
+  driving: 'Kørselgodgørelse',
+  receipt: 'Udlægshåndtering',
+  volunteer: 'Tilføj en Frivillig',
 }

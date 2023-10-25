@@ -98,7 +98,7 @@ export const eng = {
       price: '0 kr.',
       description: [
         '3 users included',
-        'Driving Allowence',
+        'Driving Reembursement',
         'Integrations',
         'Email support',
       ],
@@ -111,7 +111,7 @@ export const eng = {
       price: '19 kr.',
       description: [
         '10 users included',
-        'Driving Allowence',
+        'Driving Reembursement',
         'Integrations',
         'E-mail support',
       ],
@@ -123,7 +123,7 @@ export const eng = {
       price: '49 kr.',
       description: [
         '50 users included',
-        'Driving Allowence',
+        'Driving Reembursement',
         'Integrations',
         'E-mail support',
       ],
@@ -143,4 +143,13 @@ export const eng = {
     '3. An email will be sent to you with a receipt.',
     '4. An email will be sent to the accountant advising of the travel reimbursement.',
   ],
+  volunteer_modal_title: "When you click 'Save user'",
+  volunteer_modal_info: [
+    '1. You create the user in the database.',
+    '2. The user receives an email with login information.',
+    '3. The accountant receives an email that an account should be created for the user.',
+  ],
+  driving: 'Driving Reembursement',
+  receipt: 'Expence Management',
+  volunteer: 'Add a Volunteer',
 }

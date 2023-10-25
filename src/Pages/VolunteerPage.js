@@ -34,7 +34,7 @@ export const VolunteerPage = () => {
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
-      <Title>Opret en frivilling</Title>
+      <Title>{TEXT.volunteer}</Title>
       <form onSubmit={() => console.log('hej')}>
         <Grid
           container
@@ -118,9 +118,9 @@ export const VolunteerPage = () => {
       <Dialog
         open={infoDrivingDialogOpen}
         onClose={handleDrivingInfoDialogClose}>
-        <DialogTitle>{TEXT.driving_modal_title}</DialogTitle>
+        <DialogTitle>{TEXT.volunteer_modal_title}</DialogTitle>
         <DialogContent>
-          {TEXT.driving_modal_info.map((content, index) => (
+          {TEXT.volunteer_modal_info.map((content, index) => (
             <DialogContentText key={index}>{content}</DialogContentText>
           ))}
         </DialogContent>

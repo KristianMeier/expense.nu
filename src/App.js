@@ -34,7 +34,7 @@ export const App = () => {
             element={<DrivingPage />}
           />
           <Route
-            path={NAVIGATION.volunteers}
+            path={NAVIGATION.volunteer}
             element={<VolunteerPage />}
           />
         </Route>

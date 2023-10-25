@@ -4,7 +4,7 @@ import { Title } from '../Components/Title'
 export const Test = () => {
   return (
     <Container maxWidth="sm">
-      <Title> TitlePage</Title>
+      <Title> Test Page</Title>
     </Container>
   )
 }

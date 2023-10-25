@@ -34,7 +34,7 @@ export const RegistrerPage = () => {
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
-      <Title>Udlægshåndtering</Title>
+      <Title>{TEXT.receipt}</Title>
       <form onSubmit={handleSubmit}>
         <Grid
           container

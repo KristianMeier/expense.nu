@@ -34,7 +34,7 @@ export const DrivingPage = () => {
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
-      <Title>Kørselsgodtgørelse</Title>
+      <Title>{TEXT.driving}</Title>
       <form onSubmit={() => console.log('hej')}>
         <Grid
           container
