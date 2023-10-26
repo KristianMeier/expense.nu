@@ -19,6 +19,19 @@ export const AppBarGrey = () => {
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}>
       <Toolbar sx={{ flexWrap: 'wrap' }}>
+        {/* <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            marginRight: '10px',
+          }}>
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            style={{ height: '30px' }}
+          />
+        </Box> */}
+
         <Typography
           variant="h6"
           color="inherit"

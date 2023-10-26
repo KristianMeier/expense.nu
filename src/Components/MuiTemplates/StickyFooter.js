@@ -15,7 +15,7 @@ function Copyright() {
       <Link
         color="inherit"
         href="https://mui.com/">
-        www.FrivilligeBilag.dk
+        www.frivillig-bilag.dk
       </Link>{' '}
       {new Date().getFullYear()}
     </Typography>

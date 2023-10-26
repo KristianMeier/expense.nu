@@ -3,11 +3,20 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useLanguageContext } from '../Context/LanguageContext'
 import { useNavigate } from 'react-router-dom'
-import { FEEDBACK_LINKS } from '../Constants/constants'
+import { NAVIGATION } from '../Constants/constants'
 
 export const FeedbackPage = () => {
   const { TEXT } = useLanguageContext()
   const navigate = useNavigate()
+
+  const FEEDBACK_LINKS = [
+    { content: TEXT.feedback_frontpage, path: NAVIGATION.frontpage },
+    { content: TEXT.feedback_login, path: NAVIGATION.login },
+    { content: TEXT.feedback_signup, path: NAVIGATION.signup },
+    { content: TEXT.feedback_driving, path: NAVIGATION.driving },
+    { content: TEXT.feedback_receipt, path: NAVIGATION.receipt },
+    { content: TEXT.feedback_forgot, path: NAVIGATION.forgot },
+  ]
 
   return (
     <>
@@ -48,7 +57,7 @@ export const FeedbackPage = () => {
             align="center"
             color="text.primary"
             gutterBottom>
-            Links
+            Demo Links
           </Typography>
           <Box
             sx={{

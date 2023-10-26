@@ -45,13 +45,13 @@ export const dan = {
     'Arrangementer',
   ],
   default_category: 'Arrangementer',
-  demo: 'FrivilligeBilag.dk',
-  expense_management: 'FrivilligeBilag',
+  demo: 'Demo',
+  expense_management: 'FrivilligBilag',
   menu_items_demo: [],
   menu_items: ['Funktioner', 'Pris', 'Om os'],
   try_it_for_free: 'Prøv det gratis',
   see_it_in_action: 'Se det i aktion',
-  feature_heading: 'FrivilligeBilag',
+  feature_heading: 'FrivilligBilag',
   feature_description:
     'Det enkle udlægshånteringssoftware for mindre foreninger med frivillige. Integration med e-conomic, Billy og Dinero gør det nemmere end nogensinde for frivillige og bogholdere.',
   try_it: 'Prøv det',
@@ -64,11 +64,11 @@ export const dan = {
       image: 'images/integration_eco_bil_dinero.jpeg',
     },
     {
-      heading: 'Automatisering',
-      description:
-        'Kvitteringen går automatisk ind i regnskabssoftwaren, og bogholderen får besked',
-      image: 'images/cashflow_two.jpeg',
+      heading: 'Kørselsgodgørelse',
+      description: 'Håndter køreslsgodgørelse i appen.',
+      image: 'images/driving.webp',
     },
+
     {
       heading: 'Aktiviteter',
       description: 'Mindre tid brugt af frivillige på at lave udgifter',
@@ -80,10 +80,10 @@ export const dan = {
       image: 'images/excel.jpeg',
     },
     {
-      heading: 'Oversigt',
+      heading: 'Automatisering',
       description:
-        'I oversigtssektionen kan du se historikken over dine udgifter.',
-      image: 'images/overview_receipts.jpeg',
+        'Kvitteringen går automatisk ind i regnskabssoftwaren, og bogholderen får besked',
+      image: 'images/cashflow_two.jpeg',
     },
     {
       heading: 'Bogholder',
@@ -95,6 +95,7 @@ export const dan = {
   tiers: [
     {
       title: 'Gratis',
+      subheader: '',
       price: '0 kr.',
       description: [
         '3 brugere inkluderet',
@@ -107,7 +108,7 @@ export const dan = {
     },
     {
       title: 'Basis',
-      subheader: 'Mest populær',
+      subheader: '',
       price: '19 kr.',
       description: [
         '10 brugere inkluderet',
@@ -120,6 +121,7 @@ export const dan = {
     },
     {
       title: 'Premium',
+      subheader: '',
       price: '49 kr.',
       description: [
         '50 brugere inkluderet',
@@ -205,7 +207,13 @@ export const dan = {
   feedback_title: 'Tilbagemelding',
   feedback_subtitle:
     'Nedenfor er nogle demosider. Start med forsiden. Ideelt beskriver forsiden produktet tilstrækkeligt, så at resten af siderne er mulige at læse og give feedback på.',
+  feedback_frontpage: 'Forside',
+  feedback_login: 'Log ind',
+  feedback_signup: 'Opret bruger',
+  feedback_driving: 'Kørselsgodtgørelse',
+  feedback_receipt: 'Udlægshåndtering',
+  feedback_forgot: 'Glemt adgangskode',
   // Video section
   video_heading: 'Produktgennemgang',
-  video_subtitle: 'Se en gennemgang af produktet neden for',
+  video_subtitle: 'Se en gennemgang af produktet neden for.',
 }

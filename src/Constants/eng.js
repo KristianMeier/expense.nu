@@ -13,7 +13,6 @@ export const eng = {
     '1. Receipts and data are sent to the Cash Journal in our accounting program.',
     '2. An email will be sent to you with a receipt.',
     '3. An email will be sent to the accountant about an expense that needs to be processed.',
-    "4. You can see your expense in the history under 'History' in the menu.",
   ],
   registrer_modal_title: 'When you click register:',
   frontpage_title: 'Expenses.nu',
@@ -45,13 +44,13 @@ export const eng = {
     'Events',
   ],
   default_category: 'Events',
-  demo: 'FrivilligeBilag.dk',
+  demo: 'Demo',
   expense_management: 'Demo',
   menu_items_demo: [],
   menu_items: ['Features', 'Pricing', 'About Us'],
   try_it_for_free: 'Try it for Free',
   see_it_in_action: 'See it in action',
-  feature_heading: 'FrivilligeBilag',
+  feature_heading: 'FrivilligBilag',
   feature_description:
     'The simple accounting system for smaller unions with volunteers. Integration with e-conomic, Billy and Dinero, you make it easier than ever for volunteer and bookkeeper.',
   try_it: 'Try it',
@@ -64,10 +63,9 @@ export const eng = {
       image: 'images/integration_eco_bil_dinero.jpeg',
     },
     {
-      heading: 'Automisation',
-      description:
-        'The receipt goes automatically into the Accouting Software and Bookkeeper is notified',
-      image: 'images/cashflow_two.jpeg',
+      heading: 'Driving Reembursement',
+      description: 'Handle this directly in the app',
+      image: 'images/driving.webp',
     },
     {
       heading: 'Activities',
@@ -80,10 +78,10 @@ export const eng = {
       image: 'images/excel.jpeg',
     },
     {
-      heading: 'Overview',
+      heading: 'Automisation',
       description:
-        'In the overview Section you can see the history of your expenses.',
-      image: 'images/overview_receipts.jpeg',
+        'The receipt goes automatically into the Accouting Software and Bookkeeper is notified',
+      image: 'images/cashflow_two.jpeg',
     },
     {
       heading: 'Bookkeeper',
@@ -95,6 +93,7 @@ export const eng = {
   tiers: [
     {
       title: 'Free',
+      subheader: '',
       price: '0 kr.',
       description: [
         '3 users included',
@@ -107,7 +106,7 @@ export const eng = {
     },
     {
       title: 'Basic',
-      subheader: 'Most popular',
+      subheader: '',
       price: '19 kr.',
       description: [
         '10 users included',
@@ -120,6 +119,7 @@ export const eng = {
     },
     {
       title: 'Premium',
+      subheader: '',
       price: '49 kr.',
       description: [
         '50 users included',
@@ -207,7 +207,13 @@ export const eng = {
   feedback_title: 'Feedback',
   feedback_subtitle:
     'Beneath is some demo pages. Start with the frontpage. Ideally that describes the product, so the rest of the pages are possible to read and give feedback on.',
+  feedback_frontpage: 'Frontpage',
+  feedback_login: 'Log In',
+  feedback_signup: 'Sign Up',
+  feedback_driving: 'Driving',
+  feedback_receipt: 'Receipt',
+  feedback_forgot: 'Forgot Password',
   // Video section
   video_heading: 'Product Walkthrough',
-  video_subtitle: 'Watch a walkthrough of the product below',
+  video_subtitle: 'Watch a walkthrough of the product below.',
 }

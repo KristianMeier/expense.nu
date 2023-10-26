@@ -5,7 +5,6 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardHeader from '@mui/material/CardHeader'
 import Grid from '@mui/material/Grid'
-import StarIcon from '@mui/icons-material/StarBorder'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useLanguageContext } from '../Context/LanguageContext'
@@ -50,14 +49,13 @@ export const PriceComponent = () => {
               item
               key={tier.title}
               xs={12}
-              sm={tier.title === 'Enterprise' ? 12 : 6}
+              sm={tier.title === 'Premium' ? 12 : 6}
               md={4}>
               <Card>
                 <CardHeader
                   title={tier.title}
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
                   subheaderTypographyProps={{
                     align: 'center',
                   }}

@@ -23,8 +23,8 @@ export const Footer = () => {
           {'Copyright © '}
           <Link
             color="inherit"
-            href="http://www.FrivilligeBilag.dk">
-            www.FrivilligeBilag.dk
+            href="http://www.frivillig-bilag.dk">
+            www.frivillig-bilag.dk
           </Link>{' '}
           {new Date().getFullYear()}
         </Typography>

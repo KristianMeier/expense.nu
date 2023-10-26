@@ -8,6 +8,7 @@ import { FrontPage } from './Pages/FrontPage'
 import { FeedbackPage } from './Pages/Feedback'
 import { LogInPage } from './Pages/LogInPage'
 import { SignUpPage } from './Pages/SignUpPage'
+import { ForgotPage } from './Pages/ForgotPage'
 
 export const App = () => {
   return (
@@ -33,6 +34,10 @@ export const App = () => {
           <Route
             path={NAVIGATION.signup}
             element={<SignUpPage />}
+          />
+          <Route
+            path={NAVIGATION.forgot}
+            element={<ForgotPage />}
           />
           {/* Ikke en del af feedback siden */}
           <Route
