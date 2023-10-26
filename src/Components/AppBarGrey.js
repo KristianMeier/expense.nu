@@ -39,7 +39,7 @@ export const AppBarGrey = () => {
           variant="h6"
           color="inherit"
           noWrap
-          sx={{ flexGrow: 1 }}>
+          sx={{ flexGrow: 1, cursor: 'pointer' }}>
           {/* {TEXT.demo} */}
           Feedback
         </Typography>

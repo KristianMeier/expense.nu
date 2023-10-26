@@ -19,7 +19,7 @@ export const ReceiptPage = () => {
     handleSubmit,
     handleDateChange,
     handleAmountChange,
-    handleCatoryChange,
+    handleCategoryChange,
     handleDescriptionChange,
     date,
     amount,
@@ -77,7 +77,7 @@ export const ReceiptPage = () => {
               required
               label={TEXT.category}
               value={category}
-              onChange={handleCatoryChange}>
+              onChange={handleCategoryChange}>
               {TEXT.categories.map((item) => (
                 <MenuItem
                   key={item}
