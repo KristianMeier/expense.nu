@@ -45,14 +45,13 @@ export const dan = {
     'Arrangementer',
   ],
   default_category: 'Arrangementer',
-  demo: 'Demo',
-  expense_management: 'Demo',
+  demo: 'FrivilligeBilag.dk',
+  expense_management: 'FrivilligeBilag',
   menu_items_demo: [],
   menu_items: ['Funktioner', 'Pris', 'Om os'],
-
   try_it_for_free: 'Prøv det gratis',
   see_it_in_action: 'Se det i aktion',
-  feature_heading: 'RefundVolunteers',
+  feature_heading: 'FrivilligeBilag',
   feature_description:
     'Det enkle udlægshånteringssoftware for mindre foreninger med frivillige. Integration med e-conomic, Billy og Dinero gør det nemmere end nogensinde for frivillige og bogholdere.',
   try_it: 'Prøv det',
@@ -160,4 +159,53 @@ export const dan = {
   driving_purpose: 'Formål',
   driving_submit: 'Registrer',
   driving_getting_temp: 'Transport til arrangementet',
+  //   User Stories
+  feature_heading_user_story: 'Kundehistorier',
+  feature_description_story: 'Her er nogle af vores kundehistorier',
+  try_it_user_story: 'Prøv det',
+  read_more_user_story: 'Læs mere',
+  cards_user_story: [
+    {
+      heading_user_story: 'Testby Badmintonklub',
+      description_user_story:
+        'Der er super fedt, vi sparer tid og penge. Alt er godt nu.',
+      image_user_story: 'images/customers/badminton.avif',
+    },
+    {
+      heading_user_story: 'Testby Bridgeklub',
+      description_user_story:
+        'Der er super fedt, vi sparer tid og penge. Alt er godt nu.',
+      image_user_story: 'images/customers/bridge.jpeg',
+    },
+    {
+      heading_user_story: 'Testby Tennisklub',
+      description_user_story:
+        'Der er super fedt, vi sparer tid og penge. Alt er godt nu.',
+      image_user_story: 'images/customers/tennis.jpeg',
+    },
+    {
+      heading_user_story: 'Testby Traithlonklub',
+      description_user_story:
+        'Der er super fedt, vi sparer tid og penge. Alt er godt nu.',
+      image_user_story: 'images/customers/traithlon.jpeg',
+    },
+    // Placeholders
+    {
+      heading_user_story: 'Måske jer?',
+      description_user_story: 'Er det jer, som er vores næste kunde?',
+      image_user_story: 'images/customers/maybe-you.png',
+    },
+    {
+      heading_user_story: 'Måske jer?',
+      description_user_story: 'Er det jer, som er vores næste kunde?',
+      image_user_story: 'images/customers/maybe-you.png',
+    },
+  ],
+  // Feedback section
+  feedback_title: 'Tilbagemelding',
+  feedback_subtitle:
+    'Nedenfor er nogle demosider. Start med forsiden. Ideelt beskriver forsiden produktet tilstrækkeligt, så at resten af siderne er mulige at læse og give feedback på.',
+  // Video section
+  video_heading: 'Produktgennemgang',
+  video_subtitle: 'Se en gennemgang af produktet neden for',
 }

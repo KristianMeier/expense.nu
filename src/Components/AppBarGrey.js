@@ -24,7 +24,7 @@ export const AppBarGrey = () => {
           color="inherit"
           noWrap
           sx={{ flexGrow: 1 }}>
-          {TEXT.expense_management}
+          {TEXT.demo}
         </Typography>
         <nav>
           {TEXT.menu_items_demo.map((item, index) => (

@@ -4,13 +4,12 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useLanguageContext } from '../Context/LanguageContext'
 
-export const FeatureComponent = () => {
+export const CustomerStoryComponent = () => {
   const { TEXT } = useLanguageContext()
 
   return (
@@ -28,23 +27,15 @@ export const FeatureComponent = () => {
             align="center"
             color="text.primary"
             gutterBottom>
-            {TEXT.feature_heading}
+            {TEXT.feature_heading_user_story}
           </Typography>
           <Typography
             variant="h5"
             align="center"
             color="text.secondary"
             paragraph>
-            {TEXT.feature_description}
+            {TEXT.feature_description_story}
           </Typography>
-          <Stack
-            sx={{ pt: 4 }}
-            direction="row"
-            spacing={2}
-            justifyContent="center">
-            <Button variant="contained">{TEXT.try_it_for_free}</Button>
-            <Button variant="outlined">{TEXT.see_it_in_action}</Button>
-          </Stack>
         </Container>
       </Box>
       <Container
@@ -53,7 +44,7 @@ export const FeatureComponent = () => {
         <Grid
           container
           spacing={4}>
-          {TEXT.cards.map((card) => (
+          {TEXT.cards_user_story.map((card) => (
             <Grid
               item
               key={card.image}
@@ -69,20 +60,20 @@ export const FeatureComponent = () => {
                 <CardMedia
                   component="div"
                   sx={{ pt: '56.25%' }}
-                  image={card.image}
+                  image={card.image_user_story}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography
                     gutterBottom
                     variant="h5"
                     component="h2">
-                    {card.heading}
+                    {card.heading_user_story}
                   </Typography>
-                  <Typography>{card.description}</Typography>
+                  <Typography>{card.description_user_story}</Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">{TEXT.try_it}</Button>
-                  <Button size="small">{TEXT.read_more}</Button>
+                  <Button size="small">{TEXT.try_it_user_story}</Button>
+                  <Button size="small">{TEXT.read_more_user_story}</Button>
                 </CardActions>
               </Card>
             </Grid>

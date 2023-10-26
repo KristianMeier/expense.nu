@@ -4,17 +4,20 @@ export const USERS = {
 }
 
 export const NAVIGATION = {
-  registrer: '/demo-receipt',
-  logInd: '/login',
-  forsiden: '/',
+  receipt: '/receipt',
+  login: '/login',
+  frontpage: '/',
+  driving: '/driving',
+  signup: '/signup',
+  // Ikke en del af feedback siden
+  feedback: '/feedback',
   test: '/test',
-  sigUp: '/signup',
-  driving: '/demo-driving',
-  create_user: '/demo-create-user',
 }
 
-export const DEMO_NAVIGATION = {
-  registrer: '/demo',
-  sigUp: '/signUp',
-  logInd: '/login',
-}
+export const FEEDBACK_LINKS = [
+  { content: 'Front Page - Demo', path: NAVIGATION.frontpage },
+  { content: 'Log In Page - Demo', path: NAVIGATION.login },
+  { content: 'Sign Up Page - Demo', path: NAVIGATION.signup },
+  { content: 'Driving Page - Demo', path: NAVIGATION.driving },
+  { content: 'Receipt Page - Demo', path: NAVIGATION.receipt },
+]

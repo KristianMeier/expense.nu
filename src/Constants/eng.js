@@ -45,13 +45,13 @@ export const eng = {
     'Events',
   ],
   default_category: 'Events',
-  demo: 'Demo',
+  demo: 'FrivilligeBilag.dk',
   expense_management: 'Demo',
   menu_items_demo: [],
   menu_items: ['Features', 'Pricing', 'About Us'],
   try_it_for_free: 'Try it for Free',
   see_it_in_action: 'See it in action',
-  feature_heading: 'RefundVolunteers',
+  feature_heading: 'FrivilligeBilag',
   feature_description:
     'The simple accounting system for smaller unions with volunteers. Integration with e-conomic, Billy and Dinero, you make it easier than ever for volunteer and bookkeeper.',
   try_it: 'Try it',
@@ -160,4 +160,54 @@ export const eng = {
   driving_purpose: 'Purpose',
   driving_submit: 'Register',
   driving_getting_temp: 'Getting to the event',
+
+  // User stories
+  feature_heading_user_story: 'Customer Stories',
+  feature_description_story: 'Here is some of our customer stories',
+  try_it_user_story: 'Try it',
+  read_more_user_story: 'Read more',
+  cards_user_story: [
+    {
+      heading_user_story: 'Testby Badminton Club',
+      description_user_story:
+        'It is super cool, we save time and money. Everything is good now.',
+      image_user_story: 'images/customers/badminton.avif',
+    },
+    {
+      heading_user_story: 'Testby Bridge Club',
+      description_user_story:
+        'It is super cool, we save time and money. Everything is good now.',
+      image_user_story: 'images/customers/bridge.jpeg',
+    },
+    {
+      heading_user_story: 'Testby Tennis Club',
+      description_user_story:
+        'It is super cool, we save time and money. Everything is good now.',
+      image_user_story: 'images/customers/tennis.jpeg',
+    },
+    {
+      heading_user_story: 'Testby Triathlon Club',
+      description_user_story:
+        'It is super cool, we save time and money. Everything is good now.',
+      image_user_story: 'images/customers/traithlon.jpeg',
+    },
+    // Placeholders
+    {
+      heading_user_story: 'Maybe You?',
+      description_user_story: 'Are you our next customer?',
+      image_user_story: 'images/customers/maybe-you.png',
+    },
+    {
+      heading_user_story: 'Maybe You?',
+      description_user_story: 'Are you our next customer?',
+      image_user_story: 'images/customers/maybe-you.png',
+    },
+  ],
+  // Feedback
+  feedback_title: 'Feedback',
+  feedback_subtitle:
+    'Beneath is some demo pages. Start with the frontpage. Ideally that describes the product, so the rest of the pages are possible to read and give feedback on.',
+  // Video section
+  video_heading: 'Product Walkthrough',
+  video_subtitle: 'Watch a walkthrough of the product below',
 }

@@ -5,12 +5,12 @@ import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import Alert from '@mui/material/Alert'
 import { useNavigate } from 'react-router-dom'
-import { NAVIGATION, USERS } from '../Constants/constants'
-import { Header } from '../Components/Header'
+import { NAVIGATION, USERS } from '../../Constants/constants'
+import { Header } from '../Header'
 import { Typography } from '@mui/material'
-import { useLanguageContext } from '../Context/LanguageContext'
+import { useLanguageContext } from '../../Context/LanguageContext'
 
-export const LogindPage = () => {
+export const LogindPageOld = () => {
   const { TEXT } = useLanguageContext()
 
   const [username, setUsername] = useState('')
