@@ -46,7 +46,7 @@ export const AppBarGrey = () => {
               color="text.primary"
               href="#"
               key={index}
-              sx={{ my: 1, mx: 1.5 }}>
+              sx={{ my: 1, mx: 1 }}>
               {item}
             </Link>
           ))}
@@ -63,10 +63,16 @@ export const AppBarGrey = () => {
           }}>
           {languageButtonText}
         </Button>
+        {/* <Button
+          href="#"
+          variant="contained"
+          sx={{ my: 1, mx: 1 }}>
+          Sign Up
+        </Button> */}
         <Button
           href="#"
           variant="outlined"
-          sx={{ my: 1, mx: 1.5 }}>
+          sx={{ my: 1, mx: 1 }}>
           {TEXT.login}
         </Button>
       </Toolbar>

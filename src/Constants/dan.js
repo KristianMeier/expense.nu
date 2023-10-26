@@ -46,14 +46,13 @@ export const dan = {
   ],
   default_category: 'Arrangementer',
   demo: 'Demo',
-  expense_management: 'FrivilligBilag',
   menu_items_demo: [],
   menu_items: ['Funktioner', 'Pris', 'Om os'],
   try_it_for_free: 'Prøv det gratis',
   see_it_in_action: 'Se det i aktion',
-  feature_heading: 'FrivilligBilag',
+  feature_heading: 'Frivillig-bilag',
   feature_description:
-    'Det enkle udlægshånteringssoftware for mindre foreninger med frivillige. Integration med e-conomic, Billy og Dinero gør det nemmere end nogensinde for frivillige og bogholdere.',
+    'Det enkle udlægshånteringssoftware for foreninger med frivillige. Integration med e-conomic, Billy og Dinero gør udlægshåndtering og kørselsgodtgørelse nemt for frivillige og bogholdere.',
   try_it: 'Prøv det',
   read_more: 'Læs mere',
   cards: [
@@ -195,12 +194,12 @@ export const dan = {
     {
       heading_user_story: 'Måske jer?',
       description_user_story: 'Er det jer, som er vores næste kunde?',
-      image_user_story: 'images/customers/maybe-you.png',
+      image_user_story: 'images/customers/golf.jpeg',
     },
     {
       heading_user_story: 'Måske jer?',
       description_user_story: 'Er det jer, som er vores næste kunde?',
-      image_user_story: 'images/customers/maybe-you.png',
+      image_user_story: 'images/customers/paddle.png',
     },
   ],
   // Feedback section
@@ -213,6 +212,7 @@ export const dan = {
   feedback_driving: 'Kørselsgodtgørelse',
   feedback_receipt: 'Udlægshåndtering',
   feedback_forgot: 'Glemt adgangskode',
+  demo_links: 'Demo links',
   // Video section
   video_heading: 'Produktgennemgang',
   video_subtitle: 'Se en gennemgang af produktet neden for.',

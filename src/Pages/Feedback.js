@@ -57,7 +57,7 @@ export const FeedbackPage = () => {
             align="center"
             color="text.primary"
             gutterBottom>
-            Demo Links
+            {TEXT.demo_links}
           </Typography>
           <Box
             sx={{

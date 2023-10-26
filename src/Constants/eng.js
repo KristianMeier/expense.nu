@@ -45,14 +45,13 @@ export const eng = {
   ],
   default_category: 'Events',
   demo: 'Demo',
-  expense_management: 'Demo',
   menu_items_demo: [],
   menu_items: ['Features', 'Pricing', 'About Us'],
   try_it_for_free: 'Try it for Free',
   see_it_in_action: 'See it in action',
-  feature_heading: 'FrivilligBilag',
+  feature_heading: 'Frivillig-bilag',
   feature_description:
-    'The simple accounting system for smaller unions with volunteers. Integration with e-conomic, Billy and Dinero, you make it easier than ever for volunteer and bookkeeper.',
+    'The simple expence management software for unions with volunteers. Integration with e-conomic, Billy and Dinero, makes expense management easy for volunteers and bookkeepers.',
   try_it: 'Try it',
   read_more: 'Read More',
   cards: [
@@ -195,12 +194,12 @@ export const eng = {
     {
       heading_user_story: 'Maybe You?',
       description_user_story: 'Are you our next customer?',
-      image_user_story: 'images/customers/maybe-you.png',
+      image_user_story: 'images/customers/golf.jpeg',
     },
     {
       heading_user_story: 'Maybe You?',
       description_user_story: 'Are you our next customer?',
-      image_user_story: 'images/customers/maybe-you.png',
+      image_user_story: 'images/customers/paddle.png',
     },
   ],
   // Feedback
@@ -213,6 +212,7 @@ export const eng = {
   feedback_driving: 'Driving',
   feedback_receipt: 'Receipt',
   feedback_forgot: 'Forgot Password',
+  demo_links: 'Demo links',
   // Video section
   video_heading: 'Product Walkthrough',
   video_subtitle: 'Watch a walkthrough of the product below.',
