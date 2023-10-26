@@ -5,7 +5,7 @@ export const USERS = {
 
 export const NAVIGATION = {
   receipt: '/receipt',
-  login: '/login',
+  signin: '/signin',
   frontpage: '/',
   driving: '/driving',
   signup: '/signup',

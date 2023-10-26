@@ -216,4 +216,24 @@ export const eng = {
   // Video section
   video_heading: 'Product Walkthrough',
   video_subtitle: 'Watch a walkthrough of the product below.',
+  // Forgot Page
+  forgot_password: 'Forgotten Password',
+  forgot_email: 'Email',
+  forgot_human: 'Prove that you are human',
+  forgot_retreive: 'Retrieve Password',
+  forgot_check: 'Check your email and sign in',
+  // Sign up Page
+  signup_signup: 'Sign Up',
+  signup_first_name: 'First Name',
+  signup_last_name: 'Last Name',
+  signup_email: 'Email',
+  signup_password: 'Password',
+  signup_already: 'Already have an account? Sign in',
+  // Sign in Page
+  signin_signin: 'Sign In',
+  signin_email: 'Email',
+  signin_password: 'Password',
+  signin_remember: 'Remember me',
+  signin_forgot: 'Forgot Password?',
+  signin_signup: "Don't have an account? Sign Up",
 }

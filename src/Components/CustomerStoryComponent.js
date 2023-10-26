@@ -6,13 +6,10 @@ import CardMedia from '@mui/material/CardMedia'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import { useLanguageContext } from '../Context/LanguageContext'
-import { NAVIGATION } from '../Constants/constants'
-import { useNavigate } from 'react-router'
 import { ComponentWrapper } from './ComponentWrapper'
 
 export const CustomerStoryComponent = () => {
   const { TEXT } = useLanguageContext()
-  const navigate = useNavigate()
 
   return (
     <ComponentWrapper
@@ -49,11 +46,6 @@ export const CustomerStoryComponent = () => {
                 <Typography>{card.description_user_story}</Typography>
               </CardContent>
               <CardActions>
-                <Button
-                  onClick={() => navigate(NAVIGATION.signup)}
-                  size="small">
-                  {TEXT.try_it_user_story}
-                </Button>
                 <Button size="small">{TEXT.read_more_user_story}</Button>
               </CardActions>
             </Card>

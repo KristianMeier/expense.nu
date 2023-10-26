@@ -8,18 +8,11 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useNavigate } from 'react-router-dom'
 import { NAVIGATION } from '../Constants/constants'
+import { useLanguageContext } from '../Context/LanguageContext'
 
 export const SignUpPage = () => {
   const navigate = useNavigate()
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    })
-  }
+  const { TEXT } = useLanguageContext()
 
   return (
     <Container
@@ -38,13 +31,9 @@ export const SignUpPage = () => {
         <Typography
           component="h1"
           variant="h5">
-          Sign up
+          {TEXT.signup_signup}
         </Typography>
-        <Box
-          component="form"
-          noValidate
-          onSubmit={handleSubmit}
-          sx={{ mt: 3 }}>
+        <Box sx={{ mt: 3 }}>
           <Grid
             container
             spacing={2}>
@@ -58,7 +47,7 @@ export const SignUpPage = () => {
                 required
                 fullWidth
                 id="firstName"
-                label="First Name"
+                label={TEXT.signup_first_name}
                 autoFocus
               />
             </Grid>
@@ -70,7 +59,7 @@ export const SignUpPage = () => {
                 required
                 fullWidth
                 id="lastName"
-                label="Last Name"
+                label={TEXT.signup_last_name}
                 name="lastName"
                 autoComplete="family-name"
               />
@@ -82,7 +71,7 @@ export const SignUpPage = () => {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label={TEXT.signup_email}
                 name="email"
                 autoComplete="email"
               />
@@ -94,7 +83,7 @@ export const SignUpPage = () => {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label={TEXT.signup_password}
                 type="password"
                 id="password"
                 autoComplete="new-password"
@@ -106,7 +95,7 @@ export const SignUpPage = () => {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}>
-            Sign Up
+            {TEXT.signup_signup}
           </Button>
           <Grid
             container
@@ -114,13 +103,13 @@ export const SignUpPage = () => {
             <Grid item>
               <Typography
                 variant="body2"
-                onClick={() => navigate(NAVIGATION.login)}
+                onClick={() => navigate(NAVIGATION.signin)}
                 sx={{
                   cursor: 'pointer',
                   textDecoration: 'underline',
                   color: 'primary.main',
                 }}>
-                Already have an account? Sign in
+                {TEXT.signup_already}
               </Typography>
             </Grid>
           </Grid>

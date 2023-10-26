@@ -2,17 +2,19 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { Box, Button, Stack } from '@mui/material'
 import { useLanguageContext } from '../Context/LanguageContext'
+import { useNavigate } from 'react-router'
 
 export const ComponentWrapper = ({ children, title, subtitle, buttons }) => {
   const { TEXT } = useLanguageContext()
+  const navigate = useNavigate()
 
   return (
     <>
       <Box
         sx={{
           bgcolor: 'background.paper',
-          pt: 6,
-          pb: 6,
+          pt: 4,
+          pb: 4,
         }}>
         <Container maxWidth="sm">
           <Typography
@@ -42,11 +44,15 @@ export const ComponentWrapper = ({ children, title, subtitle, buttons }) => {
           </Typography>
           {buttons && (
             <Stack
-              sx={{ pt: 4 }}
+              sx={{ pt: 2 }}
               direction="row"
               spacing={2}
               justifyContent="center">
-              <Button variant="contained">{TEXT.try_it_for_free}</Button>
+              <Button
+                onClick={() => navigate('/signup')}
+                variant="contained">
+                {TEXT.try_it_for_free}
+              </Button>
               <Button variant="outlined">{TEXT.see_it_in_action}</Button>
             </Stack>
           )}

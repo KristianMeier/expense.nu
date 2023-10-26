@@ -49,7 +49,7 @@ export const ForsideLeft = () => {
             variant="contained"
             color="primary"
             fullWidth
-            onClick={() => navigate(NAVIGATION.logInd)}
+            onClick={() => navigate(NAVIGATION.signin)}
             style={{ height: '56px' }}>
             {TEXT.login}
           </Button>

@@ -8,9 +8,12 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import { useLanguageContext } from '../Context/LanguageContext'
 import { ComponentWrapper } from './ComponentWrapper'
+import { useNavigate } from 'react-router'
+import { NAVIGATION } from '../Constants/constants'
 
 export const PriceComponent = () => {
   const { TEXT } = useLanguageContext()
+  const navigate = useNavigate()
 
   return (
     <ComponentWrapper
@@ -76,6 +79,7 @@ export const PriceComponent = () => {
               </CardContent>
               <CardActions>
                 <Button
+                  onClick={() => navigate(NAVIGATION.signup)}
                   fullWidth
                   variant={tier.buttonVariant}>
                   {tier.buttonText}

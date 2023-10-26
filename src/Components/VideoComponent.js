@@ -14,7 +14,7 @@ export const VideoComponent = () => {
         item
         xs={12}
         md={6}
-        sx={{ height: '100%', p: 2 }}>
+        sx={{ height: '100%' }}>
         <Box
           sx={{
             width: '100%',

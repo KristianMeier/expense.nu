@@ -216,4 +216,25 @@ export const dan = {
   // Video section
   video_heading: 'Produktgennemgang',
   video_subtitle: 'Se en gennemgang af produktet neden for.',
+  // Forgot Page
+  forgot_password: 'Glemt Password',
+  forgot_email: 'Email',
+  forgot_human: 'Bevis at du er et menneske',
+  forgot_retreive: 'Genskab password',
+  forgot_check: 'Check din email og log ind',
+  // Sign up Page
+  signup_signup: 'Opret Bruger',
+  signup_first_name: 'Fornavn',
+  signup_last_name: 'Efternavn',
+  signup_email: 'Email',
+  signup_password: 'Password',
+  signup_already: 'Har du allerede on konto? Log ind.',
+  // Sign in Page
+  // Sign in Page
+  signin_signin: 'Log Ind',
+  signin_email: 'Email',
+  signin_password: 'Password',
+  signin_remember: 'Husk mig',
+  signin_forgot: 'Glemt password?',
+  signin_signup: 'Har du ikke en konto? Opret en her.',
 }

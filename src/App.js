@@ -6,7 +6,7 @@ import { DrivingPage } from './Pages/DrivingPage'
 import { Test } from './Pages/Test'
 import { FrontPage } from './Pages/FrontPage'
 import { FeedbackPage } from './Pages/Feedback'
-import { LogInPage } from './Pages/LogInPage'
+import { SignInPage } from './Pages/SignInPage'
 import { SignUpPage } from './Pages/SignUpPage'
 import { ForgotPage } from './Pages/ForgotPage'
 
@@ -28,8 +28,8 @@ export const App = () => {
             element={<FrontPage />}
           />
           <Route
-            path={NAVIGATION.login}
-            element={<LogInPage />}
+            path={NAVIGATION.signin}
+            element={<SignInPage />}
           />
           <Route
             path={NAVIGATION.signup}

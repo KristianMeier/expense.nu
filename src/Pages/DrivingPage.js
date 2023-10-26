@@ -18,8 +18,9 @@ import { Title } from '../Components/Title'
 
 export const DrivingPage = () => {
   const [infoDrivingDialogOpen, setDrivingInfoDialogOpen] = useState(false)
-  const [isDrivingModalOpen, setIsDrivingModalOpen] = useState(false)
+  // const [isDrivingModalOpen, setIsDrivingModalOpen] = useState(false)
   const { TEXT } = useLanguageContext()
+  // const [isEmpty, setIsEmpty] = useState(false)
 
   const handleDrivingInfoDialogOpen = () => {
     setDrivingInfoDialogOpen(true)
@@ -29,21 +30,22 @@ export const DrivingPage = () => {
     setDrivingInfoDialogOpen(false)
   }
 
-  const handleDrivingModalClose = () => {
-    setIsDrivingModalOpen(false)
-  }
+  // const handleDrivingModalClose = () => {
+  //   setIsDrivingModalOpen(false)
+  // }
 
-  const handleDrivingSubmit = (e) => {
-    e.preventDefault()
-    setIsDrivingModalOpen(true)
-  }
+  // const handleDrivingSubmit = (e) => {
+  //   e.preventDefault()
+  //   setIsDrivingModalOpen(true)
+  //   setIsEmpty(true)
+  // }
 
   return (
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
       <Title>{TEXT.driving_title}</Title>
-      <form onSubmit={handleDrivingSubmit}>
+      <form onSubmit={() => console.log('Demo')}>
         <Grid
           container
           spacing={3}>
@@ -54,7 +56,7 @@ export const DrivingPage = () => {
               fullWidth
               required
               label={TEXT.driving_date}
-              value="2021-01-01"
+              // value="2021-01-01"
               type="date"
               onChange={() => console.log('hej')}
               InputLabelProps={{
@@ -70,7 +72,7 @@ export const DrivingPage = () => {
               required
               type="number"
               label={TEXT.driving_kilometers}
-              value={12345}
+              // value={12345}
               onChange={() => console.log('hej')}
             />
           </Grid>
@@ -81,7 +83,7 @@ export const DrivingPage = () => {
               fullWidth
               required
               label={TEXT.driving_from}
-              value="Testvej 123, 1234 Testby, Danmark"
+              // value="Testvej 123, 1234 Testby, Danmark"
               onChange={() => console.log('hej')}></TextField>
           </Grid>
           <Grid
@@ -91,7 +93,7 @@ export const DrivingPage = () => {
               fullWidth
               required
               label={TEXT.driving_to}
-              value="Testvej 456, 5678 Testby, Danmark"
+              // value="Testvej 456, 5678 Testby, Danmark"
               onChange={() => console.log('hej')}
             />
           </Grid>
@@ -102,7 +104,7 @@ export const DrivingPage = () => {
               fullWidth
               required
               label={TEXT.driving_purpose}
-              value={TEXT.driving_getting_temp}
+              // value={TEXT.driving_getting_temp}
               onChange={() => console.log('hej')}
             />
           </Grid>
@@ -119,7 +121,7 @@ export const DrivingPage = () => {
               {TEXT.driving_submit}
             </Button>
             <Tooltip
-              title="hej"
+              title="Info"
               sx={{ ml: 1 }}>
               <IconButton
                 size={'medium'}
@@ -130,12 +132,12 @@ export const DrivingPage = () => {
           </Grid>
         </Grid>
       </form>
-      <Dialog
+      {/* <Dialog
         open={isDrivingModalOpen}
         onClose={handleDrivingModalClose}>
         <DialogTitle>{TEXT.expense_submitted}</DialogTitle>
         <Button onClick={handleDrivingModalClose}>{TEXT.close}</Button>
-      </Dialog>
+      </Dialog> */}
       <Dialog
         open={infoDrivingDialogOpen}
         onClose={handleDrivingInfoDialogClose}>

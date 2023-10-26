@@ -10,9 +10,11 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { useNavigate } from 'react-router-dom'
 import { NAVIGATION } from '../Constants/constants'
+import { useLanguageContext } from '../Context/LanguageContext'
 
 export const ForgotPage = () => {
   const navigate = useNavigate()
+  const { TEXT } = useLanguageContext()
 
   return (
     <Container
@@ -31,7 +33,7 @@ export const ForgotPage = () => {
         <Typography
           component="h1"
           variant="h5">
-          Forgotten Password
+          {TEXT.forgot_password}
         </Typography>
         <Box
           component="form"
@@ -43,7 +45,7 @@ export const ForgotPage = () => {
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label={TEXT.forgot_email}
             name="email"
             autoComplete="email"
             autoFocus
@@ -55,14 +57,14 @@ export const ForgotPage = () => {
                 color="primary"
               />
             }
-            label="Prove that you are human"
+            label={TEXT.forgot_human}
           />
           <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}>
-            Retreive Password
+            {TEXT.forgot_retreive}
           </Button>
           <Grid
             container
@@ -70,13 +72,13 @@ export const ForgotPage = () => {
             <Grid item>
               <Typography
                 variant="body2"
-                onClick={() => navigate(NAVIGATION.login)}
+                onClick={() => navigate(NAVIGATION.signin)}
                 sx={{
                   cursor: 'pointer',
                   textDecoration: 'underline',
                   color: 'primary.main',
                 }}>
-                Check your email and sign in
+                {TEXT.forgot_check}
               </Typography>
             </Grid>
           </Grid>
