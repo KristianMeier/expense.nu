@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2023-10-23",
+    "amount": "234234",
+    "description": "sdfsdf",
+    "receipt": "uploads/1698063816045-image1.jpg"
+  },
+  {
+    "date": "2023-10-23",
+    "amount": "1212",
+    "description": "sdfsdf",
+    "receipt": "uploads/1698066047514-image1.jpg"
+  },
+  {
+    "date": "2023-10-24",
+    "amount": "2332",
+    "description": "sdsd",
+    "receipt": "uploads/1698126330110-image2.jpg"
+  },
+  {
+    "date": "2023-10-24",
+    "amount": "23",
+    "description": "sdf",
+    "receipt": "uploads/1698127521140-image1.jpg"
+  },
+  {
+    "date": "2023-10-24",
+    "amount": "23424",
+    "description": "sdfsdf",
+    "receipt": "uploads/1698130814083-image1.jpg"
+  },
+  {
+    "date": "2023-10-24",
+    "amount": "11111111",
+    "description": "22222222",
+    "receipt": "uploads/1698130823469-image4.jpg"
+  },
+  {
+    "date": "2023-10-24",
+    "amount": "234234",
+    "description": "sdfasdfadsfa",
+    "receipt": "uploads/1698133521627-image2.jpg"
+  },
+  {
+    "date": "2023-10-24",
+    "amount": "234",
+    "description": "sdfsdfsdfsdf",
+    "receipt": "uploads/1698134046663-image1.jpg"
+  }
+]
