@@ -1,18 +1,18 @@
 import { Outlet } from 'react-router-dom'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { Box, CssBaseline, GlobalStyles } from '@mui/material'
-import { AppBarGrey } from './AppBarGrey'
-import { Footer } from './Footer'
+import { AdminAppBarGrey } from './AdminAppBarGrey'
+import { AdminFooter } from './AdminFooter'
 
 const defaultTheme = createTheme()
 
-export const Layout = () => (
+export const AdminLayout = () => (
   <ThemeProvider theme={defaultTheme}>
     <GlobalStyles
       styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }}
     />
     <CssBaseline />
-    <AppBarGrey />
+    <AdminAppBarGrey />
     <Box
       sx={{
         display: 'flex',
@@ -22,7 +22,7 @@ export const Layout = () => (
       <Box sx={{ flex: 1 }}>
         <Outlet />
       </Box>
-      <Footer />
+      <AdminFooter />
     </Box>
   </ThemeProvider>
 )

@@ -13,4 +13,5 @@ export const NAVIGATION = {
   // Ikke en del af feedback siden
   feedback: '/feedback',
   test: '/test',
+  admin: '/admin',
 }

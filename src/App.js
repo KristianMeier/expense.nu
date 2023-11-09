@@ -4,6 +4,8 @@ import { NAVIGATION } from './Constants/constants'
 import { ReceiptPage } from './Pages/ReceiptPage'
 import { DrivingPage } from './Pages/DrivingPage'
 import { SignInPage } from './Pages/SignInPage'
+import { AdminPage } from './Pages/AdminPage'
+import { AdminLayout } from './Components/AdminComponents/AdminLayout'
 // import { Test } from './Pages/Test'
 // import { FrontPage } from './Pages/FrontPage'
 // import { FeedbackPage } from './Pages/Feedback'
@@ -36,6 +38,7 @@ export const App = () => {
             path={NAVIGATION.signin}
             element={<SignInPage />}
           />
+
           {/* <Route
             path={NAVIGATION.signup}
             element={<SignUpPage />}
@@ -53,6 +56,12 @@ export const App = () => {
             path={NAVIGATION.feedback}
             element={<FeedbackPage />}
           /> */}
+        </Route>
+        <Route element={<AdminLayout />}>
+          <Route
+            path={NAVIGATION.admin}
+            element={<AdminPage />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
