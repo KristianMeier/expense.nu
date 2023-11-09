@@ -2,7 +2,8 @@ export const eng = {
   long_text:
     'You can integrate with E-conomic, Billy, and Dinero using the app. The expenser can submit expenses with their mobile, which go directly into the Cash Journal',
   button_ok: 'Ok',
-  login: 'Login',
+  login: 'Sign In',
+  logout: 'Log Out',
   request_demo: 'Request Demo',
   registrer_button_uploaded: 'Receipt Uploaded',
   registrer_button_not_uploaded: 'Upload a receipt',
@@ -45,7 +46,10 @@ export const eng = {
   ],
   default_category: 'Events',
   demo: 'Demo',
-  menu_items_demo: [],
+  menu_items_demo: [
+    { path: '/driving', name: 'Driving' },
+    { path: '/receipt', name: 'Receipt' },
+  ],
   menu_items: ['Features', 'Pricing', 'About Us'],
   try_it_for_free: 'Try it for Free',
   see_it_in_action: 'See it in action',

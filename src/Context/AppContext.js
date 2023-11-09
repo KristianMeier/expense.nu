@@ -12,6 +12,7 @@ export const AppContextProvider = ({ children }) => {
   const [date, setDate] = useState(getCurrentDate())
   const [isNotNumber, setIsNotNumber] = useState(false)
   const [infoDialogOpen, setInfoDialogOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -49,6 +50,10 @@ export const AppContextProvider = ({ children }) => {
 
   const handleInfoDialogOpen = () => {
     setInfoDialogOpen(true)
+  }
+
+  const changeLoginStatus = () => {
+    setIsLoggedIn(!isLoggedIn)
   }
 
   const handleInfoDialogClose = () => {
@@ -115,6 +120,8 @@ export const AppContextProvider = ({ children }) => {
         infoDialogOpen,
         handleInfoDialogOpen,
         handleInfoDialogClose,
+        isLoggedIn,
+        changeLoginStatus,
       }}>
       {children}
     </AppContext.Provider>

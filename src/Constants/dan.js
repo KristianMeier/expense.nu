@@ -2,7 +2,8 @@ export const dan = {
   long_text:
     'Du kan med appen integrere til E-conomic, Billy og Dinero. Udlæggeren kan med mobilen indsende udlæg, som havner direkte i Kassekladen',
   button_ok: 'Ok',
-  login: 'Login',
+  login: 'Log ind',
+  logout: 'Log Out',
   request_demo: 'Anmod om demo',
   registrer_button_uploaded: 'Bilag uploadet',
   registrer_button_not_uploaded: 'Upload ét bilag',
@@ -46,7 +47,10 @@ export const dan = {
   ],
   default_category: 'Arrangementer',
   demo: 'Demo',
-  menu_items_demo: [],
+  menu_items_demo: [
+    { path: '/driving', name: 'Kørsel' },
+    { path: '/receipt', name: 'Udlæg' },
+  ],
   menu_items: ['Funktioner', 'Pris', 'Om os'],
   try_it_for_free: 'Prøv det gratis',
   see_it_in_action: 'Se det i aktion',

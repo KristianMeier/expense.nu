@@ -10,6 +10,7 @@ export const Footer = () => {
       sx={{
         py: 3,
         px: 2,
+        mt: 3,
         backgroundColor: (theme) =>
           theme.palette.mode === 'light'
             ? theme.palette.grey[200]
@@ -23,8 +24,8 @@ export const Footer = () => {
           {'Copyright © '}
           <Link
             color="inherit"
-            href="http://www.frivillig-bilag.dk">
-            www.frivillig-bilag.dk
+            href="http://www.google.com">
+            www.demo-demo.dk
           </Link>{' '}
           {new Date().getFullYear()}
         </Typography>

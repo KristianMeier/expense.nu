@@ -3,7 +3,7 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
-import Grid from '@mui/material/Grid'
+// import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
@@ -11,10 +11,19 @@ import Container from '@mui/material/Container'
 import { useNavigate } from 'react-router-dom'
 import { NAVIGATION } from '../Constants/constants'
 import { useLanguageContext } from '../Context/LanguageContext'
+import { useAppContext } from '../Context/AppContext'
 
 export const SignInPage = () => {
   const navigate = useNavigate()
   const { TEXT } = useLanguageContext()
+  const { isLoggedIn, changeLoginStatus } = useAppContext()
+
+  const handleLoginButton = () => {
+    if (!isLoggedIn) {
+      changeLoginStatus()
+    }
+    navigate(NAVIGATION.receipt)
+  }
 
   return (
     <Container
@@ -69,10 +78,11 @@ export const SignInPage = () => {
             type="submit"
             fullWidth
             variant="contained"
+            onClick={() => handleLoginButton()}
             sx={{ mt: 3, mb: 2 }}>
             {TEXT.signin_signin}
           </Button>
-          <Grid container>
+          {/* <Grid container>
             <Grid
               item
               xs>
@@ -99,7 +109,7 @@ export const SignInPage = () => {
                 {TEXT.signin_signup}
               </Typography>
             </Grid>
-          </Grid>
+          </Grid> */}
         </Box>
       </Box>
     </Container>

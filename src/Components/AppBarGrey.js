@@ -2,14 +2,22 @@ import AppBar from '@mui/material/AppBar'
 import Button from '@mui/material/Button'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import Link from '@mui/material/Link'
 import { useLanguageContext } from '../Context/LanguageContext'
 import { useNavigate } from 'react-router'
 import { NAVIGATION } from '../Constants/constants'
+import { useAppContext } from '../Context/AppContext'
 
 export const AppBarGrey = () => {
   const { changeLanguage, languageButtonText, TEXT } = useLanguageContext()
+  const { isLoggedIn, changeLoginStatus } = useAppContext()
   const navigate = useNavigate()
+
+  const handleAuthButton = () => {
+    if (isLoggedIn) {
+      changeLoginStatus()
+    }
+    navigate(NAVIGATION.signin)
+  }
 
   return (
     <AppBar
@@ -35,38 +43,32 @@ export const AppBarGrey = () => {
           />
         </Box> */}
         <Typography
-          onClick={() => navigate(NAVIGATION.feedback)}
           variant="h6"
           color="inherit"
           noWrap
-          sx={{ flexGrow: 1, cursor: 'pointer' }}>
-          {/* {TEXT.demo} */}
-          Feedback
+          sx={{ flexGrow: 1 }}>
+          {TEXT.demo}
         </Typography>
-        <nav>
-          {TEXT.menu_items_demo.map((item, index) => (
-            <Link
-              variant="button"
-              color="text.primary"
-              href="#"
-              key={index}
-              sx={{ my: 1, mx: 1 }}>
-              {item}
-            </Link>
-          ))}
-        </nav>
-        <Button
+        <>
+          {isLoggedIn &&
+            TEXT.menu_items_demo.map((item, index) => (
+              <Typography
+                variant="button"
+                color="text.primary"
+                onClick={() => navigate(item.path)}
+                key={index}
+                sx={{ my: 1, mx: 1, cursor: 'pointer' }}>
+                {item.name}
+              </Typography>
+            ))}
+        </>
+        <Typography
           onClick={changeLanguage}
-          variant="text"
-          sx={{
-            my: 1,
-            textDecoration: 'underline',
-            textTransform: 'none',
-            fontSize: 'inherit',
-            color: 'text.primary',
-          }}>
+          variant="button"
+          color="text.primary"
+          sx={{ my: 1, mx: 1, cursor: 'pointer' }}>
           {languageButtonText}
-        </Button>
+        </Typography>
         {/* <Button
           href="#"
           variant="contained"
@@ -74,11 +76,11 @@ export const AppBarGrey = () => {
           Sign Up
         </Button> */}
         <Button
-          onClick={() => navigate(NAVIGATION.signin)}
-          href="#"
+          // onClick={() => navigate(NAVIGATION.signin)}
+          onClick={() => handleAuthButton()}
           variant="outlined"
           sx={{ my: 1, mx: 1 }}>
-          {TEXT.login}
+          {isLoggedIn ? TEXT.logout : TEXT.login}
         </Button>
       </Toolbar>
     </AppBar>
