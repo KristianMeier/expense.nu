@@ -53,7 +53,6 @@ export const SignInPage = () => {
             label={TEXT.signin_email}
             name="email"
             autoComplete="email"
-            autoFocus
           />
           <TextField
             margin="normal"

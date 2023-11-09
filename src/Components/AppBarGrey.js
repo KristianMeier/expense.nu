@@ -29,7 +29,7 @@ export const AppBarGrey = () => {
         mb: 3,
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}>
-      <Toolbar sx={{ flexWrap: 'wrap' }}>
+      <Toolbar sx={{ flexWrap: 'wrap', justifyContent: 'flex-end' }}>
         {/* <Box
           sx={{
             display: 'flex',
@@ -42,26 +42,24 @@ export const AppBarGrey = () => {
             style={{ height: '30px' }}
           />
         </Box> */}
-        <Typography
+        {/* <Typography
           variant="h6"
           color="inherit"
           noWrap
           sx={{ flexGrow: 1 }}>
           {TEXT.demo}
-        </Typography>
-        <>
-          {isLoggedIn &&
-            TEXT.menu_items_demo.map((item, index) => (
-              <Typography
-                variant="button"
-                color="text.primary"
-                onClick={() => navigate(item.path)}
-                key={index}
-                sx={{ my: 1, mx: 1, cursor: 'pointer' }}>
-                {item.name}
-              </Typography>
-            ))}
-        </>
+        </Typography> */}
+        {isLoggedIn &&
+          TEXT.menu_items_demo.map((item, index) => (
+            <Typography
+              variant="button"
+              color="text.primary"
+              onClick={() => navigate(item.path)}
+              key={index}
+              sx={{ my: 1, mx: 1, cursor: 'pointer' }}>
+              {item.name}
+            </Typography>
+          ))}
         <Typography
           onClick={changeLanguage}
           variant="button"
