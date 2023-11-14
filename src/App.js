@@ -2,10 +2,11 @@ import { Layout } from './Components/Layouts'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { NAVIGATION } from './Constants/constants'
 import { ReceiptPage } from './Pages/ReceiptPage'
-import { DrivingPage } from './Pages/DrivingPage'
 import { SignInPage } from './Pages/SignInPage'
 import { AdminPage } from './Pages/AdminPage'
 import { AdminLayout } from './Components/AdminComponents/AdminLayout'
+import { ReceiptPageNew } from './Pages/ReceiptPageNew'
+// import { DrivingPage } from './Pages/DrivingPage'
 // import { Test } from './Pages/Test'
 // import { FrontPage } from './Pages/FrontPage'
 // import { FeedbackPage } from './Pages/Feedback'
@@ -22,9 +23,13 @@ export const App = () => {
             element={<ReceiptPage />}
           />
           <Route
+            path={NAVIGATION.receipt_new}
+            element={<ReceiptPageNew />}
+          />
+          {/* <Route
             path={NAVIGATION.driving}
             element={<DrivingPage />}
-          />
+          /> */}
           {/* Signup er frontpage mens den vises frem */}
           <Route
             path={NAVIGATION.frontpage}

@@ -5,6 +5,7 @@ export const USERS = {
 
 export const NAVIGATION = {
   receipt: '/receipt',
+  receipt_new: '/receipt-new',
   signin: '/signin',
   frontpage: '/',
   driving: '/driving',

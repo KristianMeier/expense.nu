@@ -10,10 +10,14 @@ export const eng = {
   lorem:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl Lorem ipsum dolor sit amet',
   receipt_headers: ['Date', 'Amount', 'Comment', 'Receipt'],
+  // registrer_modal_info: [
+  //   '1. Receipts and data are sent to the Cash Journal in our accounting program.',
+  //   '2. An email will be sent to you with a receipt.',
+  //   '3. An email will be sent to the accountant about an expense that needs to be processed.',
+  // ],
   registrer_modal_info: [
-    '1. Receipts and data are sent to the Cash Journal in our accounting program.',
-    '2. An email will be sent to you with a receipt.',
-    '3. An email will be sent to the accountant about an expense that needs to be processed.',
+    '1. An email will be sent to you and the out bookkeeper with the receipt and the submitted info',
+    '2. Bookkeeper will verify your information and the expense will be registered in the accounting system',
   ],
   registrer_modal_title: 'When you click register:',
   frontpage_title: 'Expenses.nu',
@@ -47,8 +51,9 @@ export const eng = {
   default_category: 'Events',
   demo: 'Demo',
   menu_items_demo: [
-    { path: '/driving', name: 'Driving' },
+    // { path: '/driving', name: 'Driving' },
     { path: '/receipt', name: 'Receipt' },
+    { path: '/receipt-new', name: 'Receipt New' },
   ],
   menu_items: ['Features', 'Pricing', 'About Us'],
   try_it_for_free: 'Try it for Free',

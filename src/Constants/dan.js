@@ -10,10 +10,14 @@ export const dan = {
   lorem:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl Lorem ipsum dolor sit amet',
   receipt_headers: ['Dato', 'Beløb', 'Kommentar', 'Bilag'],
+  // registrer_modal_info: [
+  //   '1. Bilag og data sendes til Kassekladen i vores regnskabsprogram.',
+  //   '2. Der bliver sendt en email til dig med en kvittering.',
+  //   '3. Der bliver sendt en email til regnskabsføren om, at der er et udlæg, der skal behandles.',
+  // ],
   registrer_modal_info: [
-    '1. Bilag og data sendes til Kassekladen i vores regnskabsprogram.',
-    '2. Der bliver sendt en email til dig med en kvittering.',
-    '3. Der bliver sendt en email til regnskabsføren om, at der er et udlæg, der skal behandles.',
+    '1. Der bliver sendt en email til regnskabsføren og en kvittering til dig selv med bilag og indtastet info.',
+    '2. Regnskabsføren verificerer din information og udlægget bliver registreret i regnskabssystemet.',
   ],
   registrer_modal_title: 'Når du klikker registrer:',
   frontpage_title: 'Expenses.nu',
@@ -48,8 +52,9 @@ export const dan = {
   default_category: 'Arrangementer',
   demo: 'Demo',
   menu_items_demo: [
-    { path: '/driving', name: 'Kørsel' },
+    // { path: '/driving', name: 'Kørsel' },
     { path: '/receipt', name: 'Udlæg' },
+    { path: '/receipt-new', name: 'Udlæg Ny' },
   ],
   menu_items: ['Funktioner', 'Pris', 'Om os'],
   try_it_for_free: 'Prøv det gratis',
