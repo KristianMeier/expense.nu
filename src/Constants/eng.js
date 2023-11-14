@@ -32,7 +32,7 @@ export const eng = {
   registrer_page_header: 'Register Expense',
   receipt_date: 'Receipt Date',
   receipt_amount: 'Amount in DKK',
-  commentary: 'Extra Information',
+  commentary: 'Descripe expenses',
   submit_expense: 'Submit Expense',
   close: 'Close',
   how_to_use: 'How to use the app',

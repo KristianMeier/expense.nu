@@ -33,7 +33,7 @@ export const dan = {
   registrer_page_header: 'Registrer udlæg',
   receipt_date: 'Dato for kvittering',
   receipt_amount: 'Beløb i DKK',
-  commentary: 'Kommentar',
+  commentary: 'Beskriv udlæget',
   submit_expense: 'Registrer',
   close: 'Luk',
   how_to_use: 'Sådan bruger du appen',
