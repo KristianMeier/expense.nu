@@ -38,7 +38,7 @@ export const eng = {
   how_to_use: 'How to use the app',
   expense_submitted: 'Expense submitted',
   input_number: 'Please input a number',
-  category: 'Category',
+  category: 'Category (Choose one)',
   categories: [
     'Hotel',
     'Taxi',

@@ -39,7 +39,7 @@ export const dan = {
   how_to_use: 'Sådan bruger du appen',
   expense_submitted: 'Udlæg indsendt',
   input_number: 'Venligst indtast et nummer',
-  category: 'Kategori',
+  category: 'Kategori (Vælg en)',
   categories: [
     'Hotel',
     'Taxi',

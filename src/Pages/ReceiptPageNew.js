@@ -12,72 +12,45 @@ import {
 import { useLanguageContext } from '../Context/LanguageContext'
 import emailjs from 'emailjs-com'
 import { useState } from 'react'
-import { getCurrentDate } from '../utils/getCurrentDate'
 import { CloudUpload } from '@mui/icons-material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { green } from '@mui/material/colors'
-// import imageCompression from 'browser-image-compression'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 
 export const ReceiptPageNew = () => {
   const { TEXT } = useLanguageContext()
-  const [amount, setAmount] = useState(0)
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [category, setCategory] = useState('')
-  const [description, setDescription] = useState('')
-  const [receipt, setReceipt] = useState(null)
-  const [date, setDate] = useState(getCurrentDate())
-  const [placeholderReceipt, setPlaceholderReceipt] = useState(TEXT.no_file)
+  const [formData, setFormData] = useState({
+    amount: '',
+    name: '',
+    email: '',
+    category: '',
+    description: '',
+    receipt: null,
+    date: '',
+    placeholderReceipt: TEXT.no_file,
+  })
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isAlertModalOpen, setIsAlertModalOpen] = useState(false)
 
-  const isNoReceiptUploaded = receipt === null
-
-  const handleAmountChange = (e) => {
-    setAmount(e.target.value)
-  }
-
-  const handleDateChange = (e) => {
-    setDate(e.target.value)
-  }
-
-  const handleNameChange = (e) => {
-    setName(e.target.value)
-  }
-
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value)
-  }
-
-  const handleDescriptionChange = (e) => {
-    setDescription(e.target.value)
-  }
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value)
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleReciptUpload = async (e) => {
     const file = e.target.files[0]
     const placeHolderFileName = file.name
-    setPlaceholderReceipt(placeHolderFileName)
-    setReceipt(file)
+    setFormData({
+      ...formData,
+      receipt: placeHolderFileName,
+    })
   }
 
   const handleRequestDemo = () => {
     const bookkeeperEmail = 'kristiankassoemeier@gmail.com'
-
     const templateParams = {
-      recipients: `${bookkeeperEmail}, ${email}`,
-      date: date,
-      name: name,
-      amount: amount,
-      email: email,
-      category: category,
-      description: description,
-      receipt: placeholderReceipt,
+      ...formData,
+      recipients: `${bookkeeperEmail}, ${formData.email}`,
     }
 
     emailjs
@@ -94,13 +67,16 @@ export const ReceiptPageNew = () => {
   }
 
   const resetData = () => {
-    setDate(getCurrentDate())
-    setCategory('')
-    setAmount('')
-    setDescription('')
-    setReceipt(null)
-    setName('')
-    setEmail('')
+    setFormData({
+      amount: '',
+      name: '',
+      email: '',
+      category: '',
+      description: '',
+      receipt: null,
+      date: '',
+      placeholderReceipt: TEXT.no_file,
+    })
   }
 
   const handleModal = () => {
@@ -111,6 +87,8 @@ export const ReceiptPageNew = () => {
     setIsAlertModalOpen(!isAlertModalOpen)
   }
 
+  const isNoReceiptUploaded = formData.receipt === null
+
   return (
     <Container
       maxWidth="sm"
@@ -120,11 +98,10 @@ export const ReceiptPageNew = () => {
         variant="h5"
         color="primary"
         gutterBottom
-        sx={{
-          mb: 3,
-        }}>
+        sx={{ mb: 3 }}>
         {TEXT.receipt_title}
       </Typography>
+
       <Grid
         container
         spacing={3}>
@@ -132,34 +109,37 @@ export const ReceiptPageNew = () => {
           item
           xs={12}>
           <TextField
+            name="name"
             required
             fullWidth
             label={TEXT.name}
-            value={name}
-            onChange={handleNameChange}
+            value={formData.name}
+            onChange={handleChange}
           />
         </Grid>
         <Grid
           item
           xs={12}>
           <TextField
+            name="email"
             required
             fullWidth
             label={TEXT.email}
-            value={email}
-            onChange={handleEmailChange}
+            value={formData.email}
+            onChange={handleChange}
           />
         </Grid>
         <Grid
           item
           xs={12}>
           <TextField
+            name="date"
             required
             fullWidth
             label={TEXT.receipt_date}
             type="date"
-            value={date}
-            onChange={handleDateChange}
+            value={formData.date}
+            onChange={handleChange}
             InputLabelProps={{
               shrink: true,
             }}
@@ -169,24 +149,26 @@ export const ReceiptPageNew = () => {
           item
           xs={12}>
           <TextField
+            name="amount"
             fullWidth
             required
             type="number"
             label={TEXT.receipt_amount}
-            value={amount}
-            onChange={handleAmountChange}
+            value={formData.amount}
+            onChange={handleChange}
           />
         </Grid>
         <Grid
           item
           xs={12}>
           <TextField
+            name="category"
             select
             fullWidth
             required
             label={TEXT.category}
-            value={category}
-            onChange={handleCategoryChange}>
+            value={formData.category}
+            onChange={handleChange}>
             {TEXT.categories.map((item) => (
               <MenuItem
                 key={item}
@@ -200,39 +182,37 @@ export const ReceiptPageNew = () => {
           item
           xs={12}>
           <TextField
+            name="description"
             required
             fullWidth
             label={TEXT.commentary}
-            value={description}
-            onChange={handleDescriptionChange}
+            value={formData.description}
+            onChange={handleChange}
           />
         </Grid>
         <Grid
           item
           xs={12}>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-            }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Button
               variant="outlined"
               component="label"
               style={{
-                borderColor: receipt ? green[500] : undefined,
-                color: receipt ? green[500] : undefined,
+                borderColor: formData.receipt ? green[500] : undefined,
+                color: formData.receipt ? green[500] : undefined,
               }}>
-              {receipt ? (
+              {formData.receipt ? (
                 <CheckCircleIcon
                   style={{ color: green[500], marginRight: '10px' }}
                 />
               ) : (
                 <CloudUpload style={{ marginRight: '10px' }} />
               )}
-              {receipt
+              {formData.receipt
                 ? TEXT.registrer_button_uploaded
                 : TEXT.registrer_button_not_uploaded}
               <input
+                name="receipt"
                 type="file"
                 hidden
                 accept="image/*"
@@ -246,6 +226,7 @@ export const ReceiptPageNew = () => {
                 sx={{
                   fontStyle: 'italic',
                   color: 'secondary',
+                  paddingLeft: 1.5,
                 }}>
                 {TEXT.no_file}
               </Typography>
@@ -261,13 +242,13 @@ export const ReceiptPageNew = () => {
             type="submit"
             onClick={() => {
               if (
-                !name ||
-                !email ||
-                !date ||
-                !amount ||
-                !category ||
-                !description ||
-                !receipt
+                !formData.name ||
+                !formData.email ||
+                !formData.date ||
+                !formData.amount ||
+                !formData.category ||
+                !formData.description ||
+                !formData.receipt
               ) {
                 handleAlertModal()
                 return
