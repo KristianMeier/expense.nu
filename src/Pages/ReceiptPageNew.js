@@ -1,4 +1,12 @@
-import { Container, TextField, Button, Grid, MenuItem } from '@mui/material'
+import {
+  Container,
+  TextField,
+  Button,
+  Grid,
+  MenuItem,
+  Dialog,
+  DialogTitle,
+} from '@mui/material'
 import { useLanguageContext } from '../Context/LanguageContext'
 import { Title } from '../Components/Title'
 import emailjs from 'emailjs-com'
@@ -12,14 +20,16 @@ import imageCompression from 'browser-image-compression'
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 
 export const ReceiptPageNew = () => {
-  const [amount, setAmount] = useState(3)
-  const [name, setName] = useState('Test')
-  const [email, setEmail] = useState('test@test.dk')
-  const [category, setCategory] = useState('Taxi')
-  const [description, setDescription] = useState('This is a description')
+  const { TEXT } = useLanguageContext()
+  const [amount, setAmount] = useState(0)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [category, setCategory] = useState('')
+  const [description, setDescription] = useState('')
   const [receipt, setReceipt] = useState(null)
   const [date, setDate] = useState(getCurrentDate())
-  const { TEXT } = useLanguageContext()
+  const [placeholderReceipt, setPlaceholderReceipt] = useState(TEXT.no_file)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleAmountChange = (e) => {
     setAmount(e.target.value)
@@ -45,27 +55,43 @@ export const ReceiptPageNew = () => {
     setEmail(e.target.value)
   }
 
-  const handleReciptUpload = (e) => {
-    console.log(e.target.files[0])
-    console.log(e.target.files[0].name)
-    console.log(e.target.value)
-    setReceipt(e.target.files[0])
+  const handleReciptUpload = async (e) => {
+    const file = e.target.files[0]
+    const placeHolderFileName = file.name
+
+    const options = {
+      maxSizeMB: 0.3,
+      useWebWorker: true, // Optional, use a web worker for better performance
+    }
+
+    try {
+      const compressedFile = await imageCompression(file, options)
+
+      // Convert compressed file to Base64
+      const reader = new FileReader()
+      reader.readAsDataURL(compressedFile)
+      reader.onloadend = () => {
+        setReceipt(reader.result)
+        setPlaceholderReceipt(placeHolderFileName)
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   const handleRequestDemo = () => {
     const bookkeeperEmail = 'kristiankassoemeier@gmail.com'
 
     const templateParams = {
-      to_email: bookkeeperEmail,
+      recipients: `${bookkeeperEmail}, ${email}`,
       date: date,
+      name: name,
       amount: amount,
       email: email,
       category: category,
       description: description,
-      receipt: receipt,
+      receipt: placeholderReceipt,
     }
-
-    console.log(templateParams)
 
     emailjs
       .send(
@@ -80,6 +106,20 @@ export const ReceiptPageNew = () => {
       )
   }
 
+  const resetData = () => {
+    setDate(getCurrentDate())
+    setCategory('')
+    setAmount('')
+    setDescription('')
+    setReceipt(null)
+    setName('')
+    setEmail('')
+  }
+
+  const handleModal = () => {
+    setIsModalOpen(!isModalOpen)
+  }
+
   return (
     <Container
       maxWidth="sm"
@@ -88,6 +128,28 @@ export const ReceiptPageNew = () => {
       <Grid
         container
         spacing={3}>
+        <Grid
+          item
+          xs={12}>
+          <TextField
+            required
+            fullWidth
+            label={TEXT.name}
+            value={name}
+            onChange={handleNameChange}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}>
+          <TextField
+            required
+            fullWidth
+            label={TEXT.email}
+            value={email}
+            onChange={handleEmailChange}
+          />
+        </Grid>
         <Grid
           item
           xs={12}>
@@ -148,28 +210,6 @@ export const ReceiptPageNew = () => {
         <Grid
           item
           xs={12}>
-          <TextField
-            required
-            fullWidth
-            label={TEXT.commentary}
-            value={name}
-            onChange={handleNameChange}
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}>
-          <TextField
-            required
-            fullWidth
-            label={TEXT.commentary}
-            value={email}
-            onChange={handleEmailChange}
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}>
           <Button
             variant="outlined"
             component="label"
@@ -197,17 +237,31 @@ export const ReceiptPageNew = () => {
         </Grid>
         <Grid
           item
-          xs={12}
-          container
-          alignItems="center"></Grid>
+          xs={12}>
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            onClick={() => {
+              handleRequestDemo()
+              handleModal()
+            }}>
+            {TEXT.submit_expense}
+          </Button>
+        </Grid>
       </Grid>
-      <Button
-        variant="contained"
-        color="primary"
-        type="submit">
-        {TEXT.submit_expense}
-        onClick={() => handleRequestDemo()}
-      </Button>
+      <Dialog
+        open={isModalOpen}
+        onClose={handleModal}>
+        <DialogTitle>{TEXT.expense_submitted}</DialogTitle>
+        <Button
+          onClick={() => {
+            handleModal()
+            resetData()
+          }}>
+          {TEXT.close}
+        </Button>
+      </Dialog>
     </Container>
   )
 }

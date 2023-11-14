@@ -1,23 +1,24 @@
 import AppBar from '@mui/material/AppBar'
-import Button from '@mui/material/Button'
+// import Button from '@mui/material/Button'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import { useLanguageContext } from '../Context/LanguageContext'
 import { useNavigate } from 'react-router'
-import { NAVIGATION } from '../Constants/constants'
+// import { NAVIGATION } from '../Constants/constants'
 import { useAppContext } from '../Context/AppContext'
 
 export const AppBarGrey = () => {
   const { changeLanguage, languageButtonText, TEXT } = useLanguageContext()
-  const { isLoggedIn, changeLoginStatus } = useAppContext()
+  const { isLoggedIn } = useAppContext()
+  // const {  changeLoginStatus } = useAppContext()
   const navigate = useNavigate()
 
-  const handleAuthButton = () => {
-    if (isLoggedIn) {
-      changeLoginStatus()
-    }
-    navigate(NAVIGATION.signin)
-  }
+  // const handleAuthButton = () => {
+  //   if (isLoggedIn) {
+  //     changeLoginStatus()
+  //   }
+  //   navigate(NAVIGATION.signin)
+  // }
 
   return (
     <AppBar
@@ -73,13 +74,13 @@ export const AppBarGrey = () => {
           sx={{ my: 1, mx: 1 }}>
           Sign Up
         </Button> */}
-        <Button
+        {/* <Button
           // onClick={() => navigate(NAVIGATION.signin)}
           onClick={() => handleAuthButton()}
           variant="outlined"
           sx={{ my: 1, mx: 1 }}>
           {isLoggedIn ? TEXT.logout : TEXT.login}
-        </Button>
+        </Button> */}
       </Toolbar>
     </AppBar>
   )

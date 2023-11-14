@@ -245,4 +245,8 @@ export const eng = {
   signin_remember: 'Remember me',
   signin_forgot: 'Forgot Password?',
   signin_signup: "Don't have an account? Sign Up",
+  // Receipt Page
+  name: 'Name',
+  email: 'Email',
+  no_file: 'No file selected',
 }

@@ -246,4 +246,8 @@ export const dan = {
   signin_remember: 'Husk mig',
   signin_forgot: 'Glemt password?',
   signin_signup: 'Har du ikke en konto? Opret en her.',
+  // Receipt Page
+  name: 'Navn',
+  email: 'Email',
+  no_file: 'Ingen fil valgt',
 }
