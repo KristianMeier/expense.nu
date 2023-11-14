@@ -249,4 +249,5 @@ export const eng = {
   name: 'Name',
   email: 'Email',
   no_file: 'No file selected',
+  fill_all_fields: 'Please fill all fields',
 }

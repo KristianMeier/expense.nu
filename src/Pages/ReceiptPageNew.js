@@ -6,9 +6,10 @@ import {
   MenuItem,
   Dialog,
   DialogTitle,
+  Typography,
+  Box,
 } from '@mui/material'
 import { useLanguageContext } from '../Context/LanguageContext'
-import { Title } from '../Components/Title'
 import emailjs from 'emailjs-com'
 import { useState } from 'react'
 import { getCurrentDate } from '../utils/getCurrentDate'
@@ -30,6 +31,9 @@ export const ReceiptPageNew = () => {
   const [date, setDate] = useState(getCurrentDate())
   const [placeholderReceipt, setPlaceholderReceipt] = useState(TEXT.no_file)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isAlertModalOpen, setIsAlertModalOpen] = useState(false)
+
+  const isNoReceiptUploaded = receipt === null
 
   const handleAmountChange = (e) => {
     setAmount(e.target.value)
@@ -55,34 +59,11 @@ export const ReceiptPageNew = () => {
     setEmail(e.target.value)
   }
 
-  // const handleReciptUpload = async (e) => {
-  //   const file = e.target.files[0]
-  //   const placeHolderFileName = file.name
-
-  //   const options = {
-  //     maxSizeMB: 0.3,
-  //     useWebWorker: true, // Optional, use a web worker for better performance
-  //   }
-
-  //   try {
-  //     const compressedFile = await imageCompression(file, options)
-
-  //     // Convert compressed file to Base64
-  //     const reader = new FileReader()
-  //     reader.readAsDataURL(compressedFile)
-  //     reader.onloadend = () => {
-  //       setReceipt(reader.result)
-  //       setPlaceholderReceipt(placeHolderFileName)
-  //     }
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
-
   const handleReciptUpload = async (e) => {
     const file = e.target.files[0]
     const placeHolderFileName = file.name
     setPlaceholderReceipt(placeHolderFileName)
+    setReceipt(file)
   }
 
   const handleRequestDemo = () => {
@@ -126,11 +107,24 @@ export const ReceiptPageNew = () => {
     setIsModalOpen(!isModalOpen)
   }
 
+  const handleAlertModal = () => {
+    setIsAlertModalOpen(!isAlertModalOpen)
+  }
+
   return (
     <Container
       maxWidth="sm"
       sx={{ position: 'relative' }}>
-      <Title>{TEXT.receipt_title}</Title>
+      <Typography
+        component="h2"
+        variant="h5"
+        color="primary"
+        gutterBottom
+        sx={{
+          mb: 3,
+        }}>
+        {TEXT.receipt_title}
+      </Typography>
       <Grid
         container
         spacing={3}>
@@ -216,30 +210,47 @@ export const ReceiptPageNew = () => {
         <Grid
           item
           xs={12}>
-          <Button
-            variant="outlined"
-            component="label"
-            style={{
-              borderColor: receipt ? green[500] : undefined,
-              color: receipt ? green[500] : undefined,
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
             }}>
-            {receipt ? (
-              <CheckCircleIcon
-                style={{ color: green[500], marginRight: '10px' }}
+            <Button
+              variant="outlined"
+              component="label"
+              style={{
+                borderColor: receipt ? green[500] : undefined,
+                color: receipt ? green[500] : undefined,
+              }}>
+              {receipt ? (
+                <CheckCircleIcon
+                  style={{ color: green[500], marginRight: '10px' }}
+                />
+              ) : (
+                <CloudUpload style={{ marginRight: '10px' }} />
+              )}
+              {receipt
+                ? TEXT.registrer_button_uploaded
+                : TEXT.registrer_button_not_uploaded}
+              <input
+                type="file"
+                hidden
+                accept="image/*"
+                onChange={handleReciptUpload}
               />
-            ) : (
-              <CloudUpload style={{ marginRight: '10px' }} />
+            </Button>
+            {isNoReceiptUploaded && (
+              <Typography
+                variant="subtitle1"
+                color="textSecondary"
+                sx={{
+                  fontStyle: 'italic',
+                  color: 'secondary',
+                }}>
+                {TEXT.no_file}
+              </Typography>
             )}
-            {receipt
-              ? TEXT.registrer_button_uploaded
-              : TEXT.registrer_button_not_uploaded}
-            <input
-              type="file"
-              hidden
-              accept="image/*"
-              onChange={handleReciptUpload}
-            />
-          </Button>
+          </Box>
         </Grid>
         <Grid
           item
@@ -249,6 +260,18 @@ export const ReceiptPageNew = () => {
             color="primary"
             type="submit"
             onClick={() => {
+              if (
+                !name ||
+                !email ||
+                !date ||
+                !amount ||
+                !category ||
+                !description ||
+                !receipt
+              ) {
+                handleAlertModal()
+                return
+              }
               handleRequestDemo()
               handleModal()
             }}>
@@ -256,6 +279,17 @@ export const ReceiptPageNew = () => {
           </Button>
         </Grid>
       </Grid>
+      <Dialog
+        open={isAlertModalOpen}
+        onClose={handleAlertModal}>
+        <DialogTitle>{TEXT.fill_all_fields}</DialogTitle>
+        <Button
+          onClick={() => {
+            handleAlertModal()
+          }}>
+          {TEXT.close}
+        </Button>
+      </Dialog>
       <Dialog
         open={isModalOpen}
         onClose={handleModal}>

@@ -250,4 +250,5 @@ export const dan = {
   name: 'Navn',
   email: 'Email',
   no_file: 'Ingen fil valgt',
+  fill_all_fields: 'Udfyld venligst alle felter',
 }
