@@ -15,7 +15,7 @@ import { getCurrentDate } from '../utils/getCurrentDate'
 import { CloudUpload } from '@mui/icons-material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { green } from '@mui/material/colors'
-import imageCompression from 'browser-image-compression'
+// import imageCompression from 'browser-image-compression'
 
 emailjs.init('user_8HEIx6CnEORghk_fMdGcv')
 
@@ -55,28 +55,34 @@ export const ReceiptPageNew = () => {
     setEmail(e.target.value)
   }
 
+  // const handleReciptUpload = async (e) => {
+  //   const file = e.target.files[0]
+  //   const placeHolderFileName = file.name
+
+  //   const options = {
+  //     maxSizeMB: 0.3,
+  //     useWebWorker: true, // Optional, use a web worker for better performance
+  //   }
+
+  //   try {
+  //     const compressedFile = await imageCompression(file, options)
+
+  //     // Convert compressed file to Base64
+  //     const reader = new FileReader()
+  //     reader.readAsDataURL(compressedFile)
+  //     reader.onloadend = () => {
+  //       setReceipt(reader.result)
+  //       setPlaceholderReceipt(placeHolderFileName)
+  //     }
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
+
   const handleReciptUpload = async (e) => {
     const file = e.target.files[0]
     const placeHolderFileName = file.name
-
-    const options = {
-      maxSizeMB: 0.3,
-      useWebWorker: true, // Optional, use a web worker for better performance
-    }
-
-    try {
-      const compressedFile = await imageCompression(file, options)
-
-      // Convert compressed file to Base64
-      const reader = new FileReader()
-      reader.readAsDataURL(compressedFile)
-      reader.onloadend = () => {
-        setReceipt(reader.result)
-        setPlaceholderReceipt(placeHolderFileName)
-      }
-    } catch (error) {
-      console.error(error)
-    }
+    setPlaceholderReceipt(placeHolderFileName)
   }
 
   const handleRequestDemo = () => {
