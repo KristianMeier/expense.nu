@@ -1,12 +1,12 @@
 import { Layout } from './Components/Layouts'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { NAVIGATION } from './Constants/constants'
-// import { ReceiptPage } from './Pages/ReceiptPage'
+import { ReceiptPage } from './Pages/ReceiptPage'
 import { SignInPage } from './Pages/SignInPage'
 // import { AdminPage } from './Pages/AdminPage'
 // import { AdminLayout } from './Components/AdminComponents/AdminLayout'
-import { ReceiptPageNew } from './Pages/ReceiptPageNew'
-// import { DrivingPage } from './Pages/DrivingPage'
+// import { ReceiptPageNew } from './Pages/ReceiptPageNew'
+import { DrivingPage } from './Pages/DrivingPage'
 // import { Test } from './Pages/Test'
 // import { FrontPage } from './Pages/FrontPage'
 // import { FeedbackPage } from './Pages/Feedback'
@@ -18,24 +18,24 @@ export const App = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          {/* <Route
+          <Route
             path={NAVIGATION.receipt}
             element={<ReceiptPage />}
-          /> */}
-          <Route
+          />
+          {/* <Route
             path={NAVIGATION.frontpage}
             element={<ReceiptPageNew />}
-          />
+          /> */}
 
-          {/* <Route
+          <Route
             path={NAVIGATION.driving}
             element={<DrivingPage />}
-          /> */}
+          />
           {/* Signup er frontpage mens den vises frem */}
-          {/* <Route
+          <Route
             path={NAVIGATION.frontpage}
             element={<SignInPage />}
-          /> */}
+          />
           {/* <Route
             path={NAVIGATION.frontpage}
             element={<FrontPage />}

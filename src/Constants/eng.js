@@ -51,9 +51,9 @@ export const eng = {
   default_category: 'Events',
   demo: 'Demo',
   menu_items_demo: [
-    // { path: '/driving', name: 'Driving' },
+    { path: '/driving', name: 'Driving' },
     { path: '/receipt', name: 'Receipt' },
-    { path: '/receipt-new', name: 'Receipt New' },
+    // { path: '/receipt-new', name: 'Receipt New' },
   ],
   menu_items: ['Features', 'Pricing', 'About Us'],
   try_it_for_free: 'Try it for Free',

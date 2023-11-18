@@ -52,9 +52,9 @@ export const dan = {
   default_category: 'Arrangementer',
   demo: 'Demo',
   menu_items_demo: [
-    // { path: '/driving', name: 'Kørsel' },
+    { path: '/driving', name: 'Kørsel' },
     { path: '/receipt', name: 'Udlæg' },
-    { path: '/receipt-new', name: 'Udlæg Ny' },
+    // { path: '/receipt-new', name: 'Udlæg Ny' },
   ],
   menu_items: ['Funktioner', 'Pris', 'Om os'],
   try_it_for_free: 'Prøv det gratis',
